@@ -1,8 +1,11 @@
-# Aremu Smog
-I just had to create this repo so that I will take building my portfolio seriously. I am not particular about perfection at the moment.
+# This repo...
+is where I am building out my website, I don't know the frequency with which I will be working on this yet but I am most likely to push something every week even if it's just a comment. To make things easy for me, I have broken this down into various branches
 
-# TODO
--[x] Buy domain
+## Current Brancesh
+- Main (this branch)
 
--[] Create index.html and host it
+- [Content](https://github.com/aremu-smog/aremusmog.com/tree/content):  Scribblings, site architecure and content will go here
+
+# Current Version 0.0.1
+[Check it out here](https://aremusmog.com)
 
