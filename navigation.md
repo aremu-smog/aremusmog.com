@@ -1,8 +1,8 @@
 # List of Pages/Menu Items for my website
 
-### Home
+### [Home](home.md)
 
-### About
+### [About](about.md)
 
 ### Works
 
