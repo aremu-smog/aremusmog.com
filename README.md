@@ -1,7 +1,3 @@
-# Aremu Smog
-I just had to create this repo so that I will take building my portfolio seriously. I am not particular about perfection at the moment.
+# This branch contains ideas and the overall content for the website.
 
-# TODO
-- [x] Buy domain
-- [ ] Create index.html and host it
-
+[Check out the Navigation](navigation.md)
