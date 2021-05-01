@@ -1,4 +1,4 @@
-/* Task 1*/
+/* Task 2*/
 /*PROPERTY TABLE*/
 INSERT INTO property (PROPERTY_ID, STREET_ADDRESS, SUBURB, STATE, STATUS, TYPE, LIST_PRICE, DATE_CREATED, DATE_EDITED) VALUES (1, "Balmort street", "Southend", "VIC","listed","house",7000,"23/04/2021", "23/04/2021")
 
@@ -54,7 +54,18 @@ INSERT INTO purchase (ID, PROPERTY_ID, AGENT_ID, AUCTION, SALE_PRICE, CONTRACT_D
 /* Task 4 */
 UPDATE purchase SET AUCTION = 1 WHERE PROPERTY_ID IN (SELECT PROPERTY_ID FROM property WHERE STATE="VIC")
 
-/* Task 10 */
-a) SELECT * FROM property WHERE STREET_ADDRESS LIKE 'Bay%'
+/* Task 8 */
+DECLARE @StartDate DATETIME, @EndDate DATETIME    
+SET @StartDate = DATEADD(mm, DATEDIFF(mm, 0, getdate()) - 1, 0)    
+SET @EndDate = dateadd(dd, -1, DATEADD(mm, 1, @StartDate))
 
-b) SELECT * FROM property WHERE STREET_ADDRESS LIKE '%bay%'
+
+DECLARE @StartDate DATETIME, @EndDate DATETIME    
+SET @StartDate = DATEADD(mm, DATEDIFF(mm, 0, getdate()) - 1, 0)    
+SET @EndDate = dateadd(dd, -1, DATEADD(mm, 1, @StartDate))
+ 
+/*a*/
+SELECT STATE as "State", AVG(*) as "Average sale price" FROM property WHERE (STATUS="under contract") AND  (DATE_CREATED BETWEEN @StartDate AND @EndDate) GROUP BY STATE ORDER BY "Average sale price" DESC
+
+/* b */
+SELECT STATE as "State", TYPE as "Type", AVG(*) as "Average sale price" FROM property WHERE (STATUS="under contract") AND  (DATE_CREATED BETWEEN @StartDate AND @EndDate) GROUP BY TYPE ORDER BY "Average sale price" DESC
