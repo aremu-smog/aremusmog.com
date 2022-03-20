@@ -1,0 +1,24 @@
+:root {
+	--brand-color: #9b948a;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "Clash-Display";
+	src: url(/assets/font/ClashDisplay-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Clash-Display";
+	src: url(/assets/font/ClashDisplay-Medium.ttf);
+	font-weight: 500;
+}
+
+body {
+	font-family: "Clash-Display", sans-serif;
+	font-weight: 400;
+}
