@@ -113,6 +113,10 @@ body {
 	font-size: 14px;
 }
 
+form {
+	display: inline-block;
+}
+
 input {
 	background-color: transparent;
 	outline: none;
