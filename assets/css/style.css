@@ -123,6 +123,9 @@ input {
 	max-width: 200px;
 }
 @media screen and (max-width: 768px) {
+	#visitor {
+		display: none;
+	}
 	.header__image {
 		height: 400px;
 	}

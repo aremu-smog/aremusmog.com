@@ -1,7 +1,11 @@
 const visitor = document.querySelector("#visitor")
 const visitorsInput = document.querySelector("#visitors-name")
 const visitorsNameDisplay = document.querySelector("#visitors-name-display")
+const skip = document.querySelector("#skip")
 
+skip.addEventListener("click", () => {
+	hideVisitor()
+})
 visitorsInput.addEventListener("keypress", e => {
 	const key = e.key
 	if (key !== "Enter") {
