@@ -1,32 +1,21 @@
 const visitor = document.querySelector("#visitor")
 const visitorsInput = document.querySelector("#visitors-name")
 const visitorsNameDisplay = document.querySelector("#visitors-name-display")
+const vistorsForm = document.querySelector("#visitors-form")
 const skip = document.querySelector("#skip")
 
 skip.addEventListener("click", () => {
 	hideVisitor()
 })
-visitorsInput.addEventListener("keypress", e => {
-	const key = e.key
-	if (key !== "Enter") {
-		e.stopPropagation()
-	}
-})
 
-document.addEventListener("keypress", e => {
-	const key = e.key
-	if (key === "Enter") {
-		if (visitorsInput.value) {
-			visitorsNameDisplay.innerText = formatUsername(visitorsInput.value)
-			localStorage.setItem("visitorsName", formatUsername(visitorsInput.value))
-			hideVisitor()
-		} else {
-			alert("The input field is empty, you can press `S` to skip")
-		}
-	}
-
-	if (key === "s" || key === "S") {
+vistorsForm.addEventListener("submit", e => {
+	e.preventDefault()
+	if (visitorsInput.value) {
+		visitorsNameDisplay.innerText = formatUsername(visitorsInput.value)
+		localStorage.setItem("visitorsName", formatUsername(visitorsInput.value))
 		hideVisitor()
+	} else {
+		alert("The input field is empty, you can skip this below")
 	}
 })
 
