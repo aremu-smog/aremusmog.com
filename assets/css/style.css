@@ -90,7 +90,46 @@ body {
 	margin-left: 43%;
 }
 
+.visitor {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: var(--black-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.visitor__title {
+	font-size: 38px;
+	font-weight: 500;
+	color: var(--brand-color);
+}
+
+.visitor__description {
+	font-size: 14px;
+}
+
+form {
+	display: inline-block;
+}
+
+input {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid var(--brand-color);
+	font-size: 38px;
+	color: var(--brand-color);
+	max-width: 200px;
+}
 @media screen and (max-width: 768px) {
+	#visitor {
+		display: none;
+	}
 	.header__image {
 		height: 400px;
 	}

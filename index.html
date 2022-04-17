@@ -26,7 +26,7 @@
 		<main>
 			<article class="description">
 				<p>
-					Hi there,<br /><br />
+					Hi <span id="visitors-name-display">there</span>,<br /><br />
 
 					You are already know my name is "Aremu". <br /><br />
 
@@ -60,6 +60,24 @@
 					</ul>
 				</nav>
 			</article>
+
+			<div class="visitor" id="visitor">
+				<section>
+					<h2 class="visitor__title">
+						Thanks for stopping by. What's your name
+						<form id="visitors-form">
+							<input id="visitors-name" autofocus />
+						</form>
+						?
+					</h2>
+					<p class="visitor__description">
+						Press "Enter" after entering your name or you could
+						<a href="#" id="skip">skip this</a>
+					</p>
+				</section>
+			</div>
 		</main>
+
+		<script src="./assets/js/index.js"></script>
 	</body>
 </html>
