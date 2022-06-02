@@ -68,21 +68,42 @@
 		<script>
 			const loader = document.querySelector(".loader")
 			const preloader = document.querySelector(".preloader")
+
+			const DEVICE_BREAKPOINT = 768
+			const deviceWidth = window.innerWidth
+
+			console.log(deviceWidth)
 			document.addEventListener("readystatechange", e => {
 				switch (document.readyState) {
 					case "interactive":
-						loader.style.width = "70%"
+						if (deviceWidth > DEVICE_BREAKPOINT) {
+							loader.style.width = "70%"
+						} else {
+							loader.style.transitionDuration = "5s"
+							loader.style.transform = "scaleY(0.7)"
+						}
 						break
 					case "complete":
-						loader.style.width = "100%"
-
-						setTimeout(() => {
-							loader.style.transitionDuration = "0.75s"
-							loader.style.transform = "scaleX(0)"
-						}, 5100)
-						setTimeout(() => {
-							preloader.style.transform = "scaleX(0)"
-						}, 5100)
+						if (deviceWidth > DEVICE_BREAKPOINT) {
+							loader.style.width = "100%"
+							setTimeout(() => {
+								loader.style.transitionDuration = "0.75s"
+								loader.style.transform = "scaleX(0)"
+							}, 5100)
+							setTimeout(() => {
+								preloader.style.transform = "scaleX(0)"
+							}, 5100)
+						} else {
+							loader.style.transform = "scaleY(1)"
+							setTimeout(() => {
+								loader.style.transitionDuration = "0.75s"
+								loader.style.transformOrigin = "center top"
+								loader.style.transform = "scaleY(0)"
+							}, 5100)
+							setTimeout(() => {
+								preloader.style.transform = "scaleY(0)"
+							}, 5100)
+						}
 						break
 					default:
 						console.log("Loading.....")
