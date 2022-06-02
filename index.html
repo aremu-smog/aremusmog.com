@@ -60,6 +60,34 @@
 					</ul>
 				</nav>
 			</article>
+
+			<div class="preloader">
+				<div class="loader"></div>
+			</div>
 		</main>
+		<script>
+			const loader = document.querySelector(".loader")
+			const preloader = document.querySelector(".preloader")
+			document.addEventListener("readystatechange", e => {
+				switch (document.readyState) {
+					case "interactive":
+						loader.style.width = "70%"
+						break
+					case "complete":
+						loader.style.width = "100%"
+
+						setTimeout(() => {
+							loader.style.transitionDuration = "0.75s"
+							loader.style.transform = "scaleX(0)"
+						}, 5100)
+						setTimeout(() => {
+							preloader.style.transform = "scaleX(0)"
+						}, 5100)
+						break
+					default:
+						console.log("Loading.....")
+				}
+			})
+		</script>
 	</body>
 </html>
