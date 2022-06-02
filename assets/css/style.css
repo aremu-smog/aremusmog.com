@@ -108,7 +108,7 @@ body {
 	width: 0;
 	height: 100%;
 	background-color: var(--brand-color);
-	transition: all 5s ease-in-out;
+	transition: width 5s ease-in-out, transform 5s ease-in-out;
 	transform-origin: right center;
 }
 
