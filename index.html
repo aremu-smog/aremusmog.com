@@ -6,109 +6,67 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta
 			name="description"
-			content="Aremu Oluwagbamila (SMOG) is a frontend engineer based in Ibadan, Nigeria"
+			content="Aremu Oluwagbamila Smog is a senior frontend engineer with more than 5 years of experience building web and mobile apps across different industries including but not limited to FinTech, eCommerce, Social Media, Marketing, and Agency"
 		/>
 		<title>Aremu Smog - Frontend Engineer</title>
 		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 	<body>
 		<header class="header">
-			<img class="header__image" src="./assets/image/aremusmog.jpeg" />
-			<h1 class="header__title">Aremu Smog - Frontend Engineer</h1>
+			<h1 class="header__title">Aremu Smog</h1>
+			<p>Senior Frontend Engineer — Living in Ibadan, Nigeria 🇳🇬</p>
 		</header>
 
-		<!-- <div class="net">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div> -->
 		<main>
 			<article class="description">
+				<p>Hi there,</p>
+				<p>Everyone calls me "Aremu".</p>
+
 				<p>
-					Hi there,<br /><br />
-
-					Everyone calls me "Aremu". <br /><br />
-
-					I care deeply about making things work and look pretty in the browser.
-					<br /><br />
-
-					I currently work as a frontend engineer at
-					<a href="https://quidax.com" target="_blank">Quidax</a> contributing
-					actively to <a href="https://basqet.com">Basqet</a> a fast and
-					reliable way to receive payments anywhere in the world using
-					cryptocurrency. <br /><br />
-					I am an engineering partner at
-					<a href="https://fourthcanvas.co">FourthCanvas</a> and I lead the team
-					at <a href="https://www.youtube.com/c/webboss">web boss</a>.
+					I care deeply about making things work and looking pretty in the
+					browser and on mobile phones.
 				</p>
-				<nav>
+				<p>
+					I currently work as a senior frontend engineer at
+					<a href="https://quidax.com" target="_blank">Quidax</a> where I serve
+					as the technical lead for the growth team which is primarily
+					responsible for ensuring a smooth onboarding experience for new users
+					and getting them to carryout their first trade in the shortest time
+					possible.
+				</p>
+
+				<p>
+					Previously, I have worked with teams at:
+					<a href="https://quidax.com" target="_blank">FourthCanvas</a>,
+					<a href="https://ideo.com" target="_blank">IDEO</a>,
+					<a href="https://deardesigner.xyz" target="_blank">DearDesigner</a>,
+					and <a href="https://basqet.com" target="_blank">Basqet</a>.
+				</p>
+				<nav class="nav">
 					<ul>
-						<li>
-							<a href="./assets/Aremu Oluwagbamila.pdf" download=""
-								>Download CV</a
-							>
-						</li>
-						<li><a href="https://github.com/aremu-smog">GitHub</a></li>
-						<li><a href="https://aremusmog.medium.com/">Medium</a></li>
 						<li>
 							<a
 								href="https://www.linkedin.com/in/oluwagbamila-smog-aremu-585240129/"
+								target="_blank"
 								>LinkedIn</a
 							>
+						</li>
+						<li>
+							<a
+								href="https://www.linkedin.com/in/oluwagbamila-smog-aremu-585240129/"
+								target="_blank"
+								>YouTube</a
+							>
+						</li>
+						<li>
+							<a href="https://github.com/aremu-smog" target="_blank">GitHub</a>
+						</li>
+						<li>
+							<a href="https://aremusmog.medium.com/" target="_blank">Medium</a>
 						</li>
 					</ul>
 				</nav>
 			</article>
-
-			<div class="preloader">
-				<div class="loader"></div>
-			</div>
 		</main>
-		<script>
-			const loader = document.querySelector(".loader")
-			const preloader = document.querySelector(".preloader")
-
-			const DEVICE_BREAKPOINT = 768
-			const deviceWidth = window.innerWidth
-
-			console.log(deviceWidth)
-			document.addEventListener("readystatechange", e => {
-				switch (document.readyState) {
-					case "interactive":
-						if (deviceWidth > DEVICE_BREAKPOINT) {
-							loader.style.width = "70%"
-						} else {
-							loader.style.transitionDuration = "5s"
-							loader.style.transform = "scaleY(0.7)"
-						}
-						break
-					case "complete":
-						if (deviceWidth > DEVICE_BREAKPOINT) {
-							loader.style.width = "100%"
-							setTimeout(() => {
-								loader.style.transitionDuration = "0.75s"
-								loader.style.transform = "scaleX(0)"
-							}, 5100)
-							setTimeout(() => {
-								preloader.style.transform = "scaleX(0)"
-							}, 5100)
-						} else {
-							loader.style.transform = "scaleY(1)"
-							setTimeout(() => {
-								loader.style.transitionDuration = "0.75s"
-								loader.style.transformOrigin = "center top"
-								loader.style.transform = "scaleY(0)"
-							}, 5100)
-							setTimeout(() => {
-								preloader.style.transform = "scaleY(0)"
-							}, 5100)
-						}
-						break
-					default:
-						console.log("Loading.....")
-				}
-			})
-		</script>
 	</body>
 </html>
