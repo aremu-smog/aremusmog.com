@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Teleprompter</title>
+		<meta
+			name="description"
+			content="Deadass simple text editor/telemprompter"
+		/>
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+				font-family: sans-serif;
+				position: relative;
+				height: 100vh;
+				overflow: hidden;
+			}
+			textarea {
+				font-family: sans-serif;
+				width: 100%;
+				border: none;
+				height: 100vh;
+				overflow-y: scroll;
+				font-size: 4rem;
+				text-align: center;
+				width: 99%;
+				margin: auto;
+				caret-color: black;
+				outline: none;
+			}
+			.control-section {
+				position: absolute;
+				bottom: 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				gap: 0.5rem;
+			}
+			.controls {
+				width: 180px;
+				border-radius: 1.5rem;
+				display: flex;
+				overflow: hidden;
+			}
+			.controls__font-size {
+				width: 128px;
+			}
+			.control__button {
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 1rem 0px;
+				border: none;
+				background-color: black;
+				color: white;
+				cursor: pointer;
+				line-height: 0px;
+				font-size: 12px;
+				text-align: center;
+			}
+			.control__button:hover {
+				opacity: 0.75;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea autofocus placeholder="Please enter your text"></textarea>
+		<section class="control-section">
+			<div class="controls">
+				<button class="control__button text-align">Left</button>
+				<button class="control__button text-align">Center</button>
+				<button class="control__button text-align">Right</button>
+			</div>
+			<div class="controls controls__font-size">
+				<button class="control__button font-size">-</button>
+				<span class="control__button current__font-size">64px</span>
+				<button class="control__button font-size">+</button>
+			</div>
+		</section>
+
+		<script>
+			const editor = document.querySelector("textarea")
+
+			const alignButtons = document.querySelectorAll(".text-align")
+			const fontSizeButtons = document.querySelectorAll(".font-size")
+			const currentFontSizeSpan = document.querySelector(".current__font-size")
+
+			const minimumFontSize = "32px"
+			const getEditorCurrentFontSize = () => {
+				const editorStyle = getComputedStyle(editor)
+				const currentFontSize = editorStyle.getPropertyValue("font-size")
+				return currentFontSize
+			}
+
+			const updateEditorFontSize = () => {
+				const currentFontSize = getEditorCurrentFontSize()
+				currentFontSizeSpan.innerText = currentFontSize
+			}
+
+			alignButtons.forEach((alignButton, index) => {
+				alignButton.addEventListener("click", () => {
+					if (index === 0) {
+						editor.style.textAlign = "left"
+					} else if (index === 1) {
+						editor.style.textAlign = "center"
+					} else if (index === 2) {
+						editor.style.textAlign = "right"
+					}
+				})
+			})
+
+			fontSizeButtons.forEach((sizeButton, index) => {
+				sizeButton.addEventListener("click", () => {
+					const currentFontSize = getEditorCurrentFontSize()
+
+					if (index === 0) {
+						if (currentFontSize !== minimumFontSize) {
+							editor.style.fontSize = `calc(${currentFontSize} - 1rem)`
+						} else {
+							alert("You are on the minimum font size")
+						}
+					} else if (index === 1) {
+						editor.style.fontSize = `calc(${currentFontSize} + 1rem)`
+					}
+
+					updateEditorFontSize()
+				})
+			})
+
+			document.addEventListener("load", () => {
+				updateEditorFontSize()
+			})
+		</script>
+	</body>
+</html>
