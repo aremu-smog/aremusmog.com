@@ -1,7 +1,7 @@
 :root {
 	--brand-color: #d5eb5d;
 	--black-color: #0e0e0e;
-	--white-color: #f2eaea;
+	--white-color: #d5d5d5;
 }
 
 * {
@@ -18,19 +18,19 @@ a:hover {
 	text-decoration: none;
 }
 
-ul {
+.nav ul {
 	list-style-type: none;
 	list-style-position: inside;
 	list-style: none;
 	margin-left: -24px;
 }
 
-ul > li {
+.nav ul > li {
 	display: inline-block;
 	margin-left: -16px;
 }
 
-ul > li:not(:first-child) {
+.nav ul > li:not(:first-child) {
 	margin-left: 16px;
 }
 

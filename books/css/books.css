@@ -1,0 +1,29 @@
+.stats {
+	display: flex;
+	gap: 24px;
+}
+.stats-title {
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-bottom: -8px;
+}
+.stats-value {
+	font-size: 32px;
+	line-height: 0px;
+	font-weight: 500;
+}
+
+.year-title {
+	font-weight: 200;
+	font-size: 40px;
+}
+
+.book-info {
+	list-style-type: none;
+	padding-inline-start: 0px;
+	border-bottom: 0.5px solid var(--white-color);
+	padding-bottom: 8px;
+}
+.book-info li {
+	margin-bottom: 8px;
+}
