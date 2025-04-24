@@ -75,6 +75,10 @@ body {
 	font-weight: 600;
 	line-height: 0;
 }
+.header__title a {
+	text-decoration: none;
+	color: var(--brand-color);
+}
 .header__break {
 	display: none;
 }
