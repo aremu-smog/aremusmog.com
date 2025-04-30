@@ -352,6 +352,12 @@ const books = {
 			"No of Pages": 198,
 			Author: "Ken Allen",
 		},
+		{
+			Title: "Be(coming) Nigerian: a guide",
+			Status: "Completed",
+			"No of Pages": 148,
+			Author: "Elnathan John",
+		},
 	],
 }
 
