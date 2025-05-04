@@ -341,6 +341,12 @@ const books = {
 			Author: "Isaac Walterson",
 		},
 		{
+			Title: "When Breath Becomes Air",
+			Status: "Completed",
+			"No of Pages": 228,
+			Author: "Paul Kalanithi",
+		},
+		{
 			Title: "No Rules; Rules: Netflix and the Culture of Reinvention",
 			Status: "Completed",
 			"No of Pages": 272,
