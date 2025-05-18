@@ -299,7 +299,7 @@ const books = {
 		{
 			Title: "The Compound Effect",
 			Status: "Completed",
-			"No of Pages": "",
+			"No of Pages": 208,
 			Author: "Darren Hardy",
 		},
 		{
@@ -334,6 +334,12 @@ const books = {
 		},
 	],
 	2025: [
+		{
+			Title: "Elon Musk",
+			Status: "Completed",
+			"No of Pages": 615,
+			Author: "Isaac Walterson",
+		},
 		{
 			Title: "Steve Jobs",
 			Status: "Completed",
