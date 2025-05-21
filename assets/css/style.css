@@ -1,5 +1,5 @@
 :root {
-	--brand-color: #d5eb5d;
+	--brand-color: #d5d5d5;
 	--black-color: #0e0e0e;
 	--white-color: #d5d5d5;
 }
@@ -105,5 +105,8 @@ body {
 	}
 	.hide__mobile {
 		display: none;
+	}
+	body {
+		padding: 1rem;
 	}
 }
