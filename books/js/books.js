@@ -335,6 +335,12 @@ const books = {
 	],
 	2025: [
 		{
+			Title: "Eric Ries",
+			Status: "Completed",
+			"No of Pages": 290,
+			Author: "Eric Ries",
+		},
+		{
 			Title: "Elon Musk",
 			Status: "Completed",
 			"No of Pages": 615,
