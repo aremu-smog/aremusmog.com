@@ -335,7 +335,7 @@ const books = {
 	],
 	2025: [
 		{
-			Title: "Eric Ries",
+			Title: "The Lean Startup",
 			Status: "Completed",
 			"No of Pages": 290,
 			Author: "Eric Ries",
