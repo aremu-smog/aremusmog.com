@@ -65,9 +65,21 @@ body {
 .header {
 	max-width: 500px;
 	margin: auto;
-	margin-top: 5%;
+	margin-top: 2rem;
 	color: var(--brand-color);
 	margin-bottom: 32px;
+}
+.header__image {
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	object-fit: cover;
+	border-radius: 200px 0;
+	margin-bottom: -8px;
+	transition: all 0.2s ease-in-out;
+}
+.header__image:hover {
+	border-radius: 14px;
 }
 .header__title {
 	color: var(--brand-color);
@@ -98,7 +110,7 @@ body {
 
 @media screen and (max-width: 600px) {
 	.header {
-		margin-top: 30%;
+		/* margin-top: 0%; */
 	}
 	.hide__pc {
 		display: inline-block;
