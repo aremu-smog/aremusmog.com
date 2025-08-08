@@ -376,6 +376,12 @@ const books = {
 			"No of Pages": 148,
 			Author: "Elnathan John",
 		},
+		{
+			Title: "A Broken People's Playlist",
+			Status: "Completed",
+			"No of Pages": 250,
+			Author: "Chimeka Garricks",
+		},
 	],
 }
 
