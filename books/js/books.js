@@ -382,6 +382,12 @@ const books = {
 			"No of Pages": 250,
 			Author: "Chimeka Garricks",
 		},
+		{
+			Title: "Deep Work",
+			Status: "Completed",
+			"No of Pages": 263,
+			Author: "Cal NewPort",
+		},
 	],
 }
 
