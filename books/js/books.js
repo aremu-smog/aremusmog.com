@@ -335,6 +335,12 @@ const books = {
 	],
 	2025: [
 		{
+			Title: "Deep Work",
+			Status: "Completed",
+			"No of Pages": 263,
+			Author: "Cal NewPort",
+		},
+		{
 			Title: "The Lean Startup",
 			Status: "Completed",
 			"No of Pages": 290,
@@ -381,12 +387,6 @@ const books = {
 			Status: "Completed",
 			"No of Pages": 250,
 			Author: "Chimeka Garricks",
-		},
-		{
-			Title: "Deep Work",
-			Status: "Completed",
-			"No of Pages": 263,
-			Author: "Cal NewPort",
 		},
 	],
 }
