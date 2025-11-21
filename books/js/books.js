@@ -371,6 +371,12 @@ const books = {
 			Author: "Reed Hastings & Erin Meyer",
 		},
 		{
+			Title: "The 360 degrees leader",
+			Status: "Completed",
+			"No of Pages": 306,
+			Author: "John C. Maxwell",
+		},
+		{
 			Title: "Radical Simplicity",
 			Status: "Completed",
 			"No of Pages": 198,
