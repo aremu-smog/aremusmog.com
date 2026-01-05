@@ -395,6 +395,14 @@ const books = {
 			Author: "Chimeka Garricks",
 		},
 	],
+	2026: [
+		{
+			Title: "Nexus",
+			Status: "Completed",
+			"No of Pages": 406,
+			Author: "Yuval Noah Harari",
+		},
+	],
 }
 
 const bookCategories = Object.keys(books).sort((a, b) => b - a)
