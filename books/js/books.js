@@ -397,6 +397,12 @@ const books = {
 	],
 	2026: [
 		{
+			Title: "The 5AM Club",
+			Status: "Completed",
+			"No of Pages": 314,
+			Author: "Robin Sharma",
+		},
+		{
 			Title: "Nexus",
 			Status: "Completed",
 			"No of Pages": 406,
@@ -430,5 +436,5 @@ const bookStats = bookCategories.reduce(
 	{
 		totalNoPages: 0,
 		totalNoOfBooks: 0,
-	}
+	},
 )
