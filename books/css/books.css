@@ -15,7 +15,7 @@
 
 .year-title {
 	font-weight: 200;
-	font-size: 40px;
+	font-size: 32px;
 }
 
 .book-info {
@@ -26,4 +26,10 @@
 }
 .book-info li {
 	margin-bottom: 8px;
+}
+.book-info li:last-child {
+	display: flex;
+	gap: 16px;
+	justify-content: space-between;
+	margin-top: 12px;
 }

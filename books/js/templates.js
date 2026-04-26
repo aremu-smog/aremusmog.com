@@ -23,8 +23,8 @@ const yearAndBooksTemplate = (year, books = []) => {
 						<li>
 							<strong>Title:</strong> ${book["Title"]}
 						</li>
-						<li><strong>Author:</strong> ${book["Author"]}</li>
-						<li><strong>No of Pages:</strong> ${book["No of Pages"]}</li>
+						<li><span><strong>Author:</strong> ${book["Author"]}</span>
+						<span><strong>pages:</strong> ${book["No of Pages"]}</span></li>
 					</ul>`
 											})
 											.join("")}
