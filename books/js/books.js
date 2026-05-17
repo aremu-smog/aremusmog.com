@@ -397,6 +397,18 @@ const books = {
 	],
 	2026: [
 		{
+			Title: "How to Win Friends and Influence People",
+			Status: "Completed",
+			"No of Pages": 268,
+			Author: "Dale Carnegie",
+		},
+		{
+			Title: "Making It Big",
+			Status: "Completed",
+			"No of Pages": 274,
+			Author: "Femi Otedola",
+		},
+		{
 			Title: "The 5AM Club",
 			Status: "Completed",
 			"No of Pages": 314,
