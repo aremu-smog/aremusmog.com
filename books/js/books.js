@@ -397,6 +397,24 @@ const books = {
 	],
 	2026: [
 		{
+			Title: "The Art of Spending Money",
+			Status: "Completed",
+			"No of Pages": 220,
+			Author: "Morgan Housel",
+		},
+		{
+			Title: "Ego is the enemy",
+			Status: "Completed",
+			"No of Pages": 268,
+			Author: "Ryan Holiday",
+		},
+		{
+			Title: "The Secret Lives of Baba Segi's wives",
+			Status: "Completed",
+			"No of Pages": 244,
+			Author: "Lola Shoneyin",
+		},
+		{
 			Title: "How to Win Friends and Influence People",
 			Status: "Completed",
 			"No of Pages": 268,
