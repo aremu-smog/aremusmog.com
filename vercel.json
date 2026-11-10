@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/amgl",
+      "destination": "https://amgl.aremusmog.com"
+    },
+    {
+      "source": "/amgl/:path*",
+      "destination": "https://amgl.aremusmog.com/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(font|image)/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
