@@ -5,11 +5,11 @@
   "rewrites": [
     {
       "source": "/amgl",
-      "destination": "https://amgl.aremusmog.com"
+      "destination": "https://amgl.aremusmog.com/amgl"
     },
     {
       "source": "/amgl/:path*",
-      "destination": "https://amgl.aremusmog.com/:path*"
+      "destination": "https://amgl.aremusmog.com/amgl/:path*"
     }
   ],
   "headers": [
