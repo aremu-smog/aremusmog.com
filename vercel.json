@@ -10,6 +10,14 @@
     {
       "source": "/amgl/:path*",
       "destination": "https://amgl.aremusmog.com/amgl/:path*"
+    },
+    {
+      "source": "/donda",
+      "destination": "https://donda.aremusmog.com/"
+    },
+    {
+      "source": "/donda/:path*",
+      "destination": "https://donda.aremusmog.com/:path*"
     }
   ],
   "headers": [
