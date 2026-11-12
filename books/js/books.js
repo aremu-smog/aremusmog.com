@@ -350,13 +350,13 @@ const books = {
 			Title: "Elon Musk",
 			Status: "Completed",
 			"No of Pages": 615,
-			Author: "Isaac Walterson",
+			Author: "Walter Isaacson",
 		},
 		{
 			Title: "Steve Jobs",
 			Status: "Completed",
 			"No of Pages": 570,
-			Author: "Isaac Walterson",
+			Author: "Walter Isaacson",
 		},
 		{
 			Title: "When Breath Becomes Air",
@@ -443,8 +443,6 @@ const books = {
 
 const bookCategories = Object.keys(books).sort((a, b) => b - a)
 
-const mostRecentYear = bookCategories[0]
-
 const booksMarkup = []
 const bookStats = bookCategories.reduce(
 	(prev, current) => {
@@ -452,7 +450,8 @@ const bookStats = bookCategories.reduce(
 			return book.Status
 		})
 
-		booksMarkup.push(yearAndBooksTemplate(current, completedBooks))
+		const isMostRecentYear = booksMarkup.length === 0
+		booksMarkup.push(yearAndBooksTemplate(current, completedBooks, isMostRecentYear))
 		const noOfBooks = completedBooks.length
 		const noOfPages = completedBooks.reduce((prev, current) => {
 			return prev + Number(current["No of Pages"])

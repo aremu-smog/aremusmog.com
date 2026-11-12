@@ -4,16 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/assets/image/favicon.svg" type="image/svg+xml" />
 		<link
-			rel="shortcut icon"
-			href="/assets/image/favicon.png"
-			type="image/x-icon"
+			rel="icon"
+			href="/assets/image/favicon-32.png"
+			type="image/png"
+			sizes="32x32"
 		/>
+		<link rel="apple-touch-icon" href="/assets/image/apple-touch-icon.png" />
 		<meta
 			name="description"
 			content="Looking for something read? Here is pretty much everything I have read since 2020. It includes biographies, Nigerian fiction, business books, financial management and literacy, faith, etc"
 		/>
 		<title>Reading List - Aremu Oluwagbamila</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist:wght@300;400&display=swap"
+		/>
 		<link rel="stylesheet" href="/assets/css/style.css" />
 		<link rel="stylesheet" href="/books/css/books.css" />
 		<meta
@@ -73,20 +82,21 @@
 			></iframe
 		></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		<header class="header">
-			<nav class="nav">
-				<ul>
-					<li>
-						<a href="/">Aremu Smog</a>
-					</li>
-				</ul>
-			</nav>
-			<h1 class="header__title"><a href="/">BOOKS</a></h1>
-			<p>2020 — <span id="most_recent_year">2025</span> 📚</p>
+		<div class="layout">
+		<header class="header header--sticky">
+			<img
+				src="/assets/image/reading-list.jpg"
+				alt="A stack of books"
+				width="160"
+				class="header__image"
+			/>
+			<h1 class="header__title"><a href="/">Reading List</a></h1>
+			<p class="header__subtitle">Everything I have read since 2020</p>
 		</header>
 
 		<main>
 			<article class="description">
+				<!-- Stats hidden for now
 				<section class="stats">
 					<div>
 						<p class="stats-title">Total No. of Pages</p>
@@ -97,9 +107,21 @@
 						<h3 class="stats-value" id="total_no_of_books">50</h3>
 					</div>
 				</section>
+				-->
 				<section id="books_list"></section>
 			</article>
 		</main>
+		</div>
+		<nav class="pill-nav" aria-label="Main">
+			<a href="/"
+				><span class="pill-nav__icon pill-nav__icon--home" aria-hidden="true"></span
+				>Home</a
+			>
+			<a href="/books/" aria-current="page"
+				><span class="pill-nav__icon pill-nav__icon--books" aria-hidden="true"></span
+				>Books</a
+			>
+		</nav>
 		<script src="/books/js/templates.js"></script>
 		<script src="/books/js/books.js"></script>
 		<script src="/books/js/index.js"></script>

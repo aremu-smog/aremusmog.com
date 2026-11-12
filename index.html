@@ -4,16 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="./assets/image/favicon.svg" type="image/svg+xml" />
 		<link
-			rel="shortcut icon"
-			href="./assets/image/favicon.png"
-			type="image/x-icon"
+			rel="icon"
+			href="./assets/image/favicon-32.png"
+			type="image/png"
+			sizes="32x32"
 		/>
+		<link rel="apple-touch-icon" href="./assets/image/apple-touch-icon.png" />
 		<meta
 			name="description"
 			content="Aremu Oluwagbamila Smog is a senior mobile and  frontend engineer with more than 5 years of experience building web and mobile apps across different industries including but not limited to FinTech, eCommerce, Social Media, Marketing, and Agency"
 		/>
 		<title>Aremu Oluwagbamila - Senior Frontend Engineer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist:wght@300;400&display=swap"
+		/>
 		<link rel="stylesheet" href="./assets/css/style.css" />
 		<meta
 			name="description"
@@ -82,82 +91,103 @@
 			></iframe
 		></noscript>
 		<!-- End Google Tag Manager (noscript) -->
+		<div class="layout">
 		<header class="header">
 			<img
-				src="./assets/image/aremu-2025.jpg"
+				src="./assets/image/aremu-2026.jpg"
 				alt="Aremu Oluwagbamila (SMOG)"
-				width="200"
+				width="160"
 				class="header__image"
 			/>
 			<!-- <nav class="nav">
 				<ul>
 					<li>
-						<a href="/">Home</a>
+						<a href="/"
+				><span class="pill-nav__icon pill-nav__icon--home" aria-hidden="true"></span
+				>Home</a
+			>
 					</li>
 					<li>
-						<a href="/books/">Books</a>
+						<a href="/books/"
+				><span class="pill-nav__icon pill-nav__icon--books" aria-hidden="true"></span
+				>Books</a
+			>
 					</li>
 				</ul>
 			</nav> -->
 			<h1 class="header__title"><a href="/">Aremu Oluwagbamila</a></h1>
+			<p class="header__subtitle">Senior Mobile Engineer</p>
+			<nav class="socials">
+				<ul>
+					<li>
+						<a href="https://www.linkedin.com/in/oluwagbamila-aremu-585240129/" target="_blank">
+							<img src="./assets/icons/linkedin.svg" alt="LinkedIn" />
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/aremu-smog" target="_blank">
+							<img src="./assets/icons/github.svg" alt="GitHub" />
+						</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/@webboss" target="_blank">
+							<img src="./assets/icons/youtube.svg" alt="YouTube" />
+						</a>
+					</li>
+					<li>
+						<a href="https://aremusmog.medium.com/" target="_blank">
+							<img src="./assets/icons/medium.svg" alt="Medium" />
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
 
 		<main>
 			<article class="description">
-				<p>- Senior Mobile Engineer</p>
 				<p>
-					- Co-founder & Engineering Muscle at
-					<a href="https://xtrackr.app" target="_blank">xtrackr</a>
+					I've spent the last
+					<span data-years-since="2018">8</span> years building web and mobile
+					apps across fintech, crypto and e-commerce, though I came in through
+					design, animating logos at a design agency.
 				</p>
 				<p>
-					- Previously Engineering Manager & Senior Frontend Engineer at
-					<a href="https://quidax.io" target="_blank">Quidax</a>
+					Agency work taught me that someone else has to live with what you ship.
+					Fintech taught me that it isn't enough for me to win; my team has to win
+					too. There, I grew from frontend engineer to engineering manager and
+					helped launch a product that moved ₦1.2 billion in its first three
+					months.
 				</p>
 				<p>
-					- Previously engineering partner at
-					<a href="https://fourthcanvas.co" target="_blank">FourthCanvas</a>
-				</p>
-				<p>
-					- Did engineering things at
-					<a href="https://ideo.com" target="_blank">IDEO</a>,
-					<a href="https://golemon.com" target="_blank">GoLemon</a>,
-					<a href="https://deardesigner.xyz" target="_blank">DearDesigner</a>,
-					and <a href="https://basqet.com" target="_blank">Basqet</a>
-				</p>
-
-				<p>
-					- <a href="books/">Avid reader 📚</a>,
+					I'm co-founder and CTO of
+					<a href="https://xtrackr.app" target="_blank">xtrackr</a>, helping people
+					keep track of their recurring expenses. Outside work, I'm
+					<a href="books/">reading</a>,
 					<a
 						href="https://strava.app.link/G5o0UpOKPSb"
 						target="_blank"
 						rel="no-follow"
-						>amateur biker 🚴‍♀️</a
-					>, and salsa dancer 💃🕺🏼
+						>cycling</a
+					>
+					or dancing salsa.
 				</p>
-				<nav class="nav">
-					<ul>
-						<li>
-							📲
-							<a
-								href="https://www.linkedin.com/in/oluwagbamila-aremu-585240129/"
-								target="_blank"
-								>LinkedIn</a
-							>
-						</li>
-						<li>
-							<a href="https://www.youtube.com/@webboss" target="_blank"
-								>YouTube</a
-							>
-						</li>
-						<li>
-							<a href="https://github.com/aremu-smog" target="_blank">GitHub</a>
-						</li>
-						<li>
-							<a href="https://aremusmog.medium.com/" target="_blank">Medium</a>
-						</li>
-					</ul>
-				</nav>
 			</article>
 		</main>
+		</div>
+		<nav class="pill-nav" aria-label="Main">
+			<a href="/" aria-current="page"
+				><span class="pill-nav__icon pill-nav__icon--home" aria-hidden="true"></span
+				>Home</a
+			>
+			<a href="/books/"
+				><span class="pill-nav__icon pill-nav__icon--books" aria-hidden="true"></span
+				>Books</a
+			>
+		</nav>
+		<script>
+			document.querySelectorAll("[data-years-since]").forEach((el) => {
+				el.textContent = new Date().getFullYear() - Number(el.dataset.yearsSince)
+			})
+		</script>
 	</body>
 </html>

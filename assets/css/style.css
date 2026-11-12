@@ -2,6 +2,8 @@
 	--brand-color: #d5d5d5;
 	--black-color: #0e0e0e;
 	--white-color: #d5d5d5;
+	--font-doto: "Doto", monospace;
+	--font-body: "Geist", sans-serif;
 }
 
 * {
@@ -54,11 +56,11 @@ a:hover {
 	display: inline-block;
 }
 body {
-	font-family: sans-serif;
+	font-family: var(--font-body);
 	font-weight: 400;
 	background-color: var(--black-color);
 	color: var(--white-color);
-	padding: 2rem;
+	padding: 2rem 2rem 7rem;
 	margin: 0;
 }
 
@@ -70,27 +72,50 @@ body {
 	margin-bottom: 32px;
 }
 .header__image {
-	height: 200px;
-	width: 200px;
+	height: 160px;
+	width: 160px;
 	display: inline-block;
 	object-fit: cover;
-	border-radius: 200px 0;
-	margin-bottom: -8px;
-	transition: all 0.2s ease-in-out;
-}
-.header__image:hover {
 	border-radius: 14px;
+	margin-bottom: -8px;
+	filter: grayscale(100%);
 }
 .header__title {
+	font-family: var(--font-doto);
 	color: var(--brand-color);
 	font-size: 40px;
-	font-weight: 400;
+	font-weight: 800;
+	text-transform: uppercase;
 	line-height: 48px;
 	margin-bottom: -8px;
 }
 .header__title a {
 	text-decoration: none;
 	color: var(--brand-color);
+}
+.header__subtitle {
+	margin: 16px 0 0;
+	font-size: 18px;
+	font-weight: 300;
+}
+.socials ul {
+	display: flex;
+	gap: 16px;
+	list-style: none;
+	margin: 16px 0 0;
+	padding: 0;
+}
+.socials a {
+	display: block;
+	transition: opacity 0.2s ease-in-out;
+}
+.socials a:hover {
+	opacity: 0.5;
+}
+.socials img {
+	display: block;
+	width: auto;
+	height: 22px;
 }
 .header__break {
 	display: none;
@@ -104,13 +129,116 @@ body {
 	max-width: 500px;
 	line-height: 1.6;
 	margin: auto;
-	font-family: sans-serif;
+	font-family: var(--font-body);
 	font-weight: 300;
+}
+
+.pill-nav {
+	position: fixed;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 4px;
+	padding: 6px;
+	border: 1px solid #2a2a2a;
+	border-radius: 999px;
+	background-color: #1a1a1a;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+	z-index: 10;
+}
+.pill-nav a {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 18px;
+	border-radius: 999px;
+	font-family: var(--font-doto);
+	font-size: 18px;
+	font-weight: 800;
+	color: #9a9a9a;
+	text-decoration: none;
+	transition:
+		background-color 0.2s ease-in-out,
+		color 0.2s ease-in-out;
+}
+.pill-nav__icon {
+	display: none;
+	width: 20px;
+	height: 20px;
+	background-color: currentColor;
+	-webkit-mask: var(--icon) center / contain no-repeat;
+	mask: var(--icon) center / contain no-repeat;
+}
+.pill-nav a[aria-current="page"] .pill-nav__icon {
+	display: block;
+}
+.pill-nav__icon--home {
+	--icon: url("../icons/home.svg");
+}
+.pill-nav__icon--books {
+	--icon: url("../icons/books.svg");
+}
+.pill-nav a:hover {
+	background-color: #262626;
+	color: var(--white-color);
+}
+.pill-nav a[aria-current="page"] {
+	background-color: var(--white-color);
+	color: var(--black-color);
+}
+
+.illustrations {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 48px;
+	max-width: 500px;
+	margin: 64px auto 0;
+}
+.illustrations img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+@media screen and (min-width: 1100px) {
+	.layout {
+		display: flex;
+		align-items: flex-start;
+		gap: 48px;
+		max-width: 1100px;
+		margin: 2rem auto 0;
+	}
+	.layout .header {
+		flex: 0 0 440px;
+		max-width: none;
+		margin: 0;
+	}
+	.layout .header__title {
+		white-space: nowrap;
+	}
+	.layout .header--sticky {
+		position: sticky;
+		top: 4rem;
+	}
+	.layout main {
+		flex: 1;
+	}
+	.layout .description {
+		margin: 0;
+	}
+	.layout .description > p:first-child {
+		margin-top: 0;
+	}
+	.illustrations {
+		max-width: 1100px;
+	}
 }
 
 @media screen and (max-width: 600px) {
 	.header {
-		/* margin-top: 0%; */
+		margin-top: 0;
 	}
 	.hide__pc {
 		display: inline-block;
@@ -119,6 +247,32 @@ body {
 		display: none;
 	}
 	body {
-		padding: 1rem;
+		padding: 1.5rem 1.5rem 6rem;
+	}
+	.header__image {
+		height: 128px;
+		width: 128px;
+	}
+	.header__title {
+		font-size: 28px;
+		line-height: 34px;
+	}
+	.header__subtitle {
+		font-size: 16px;
+	}
+	.socials ul {
+		gap: 12px;
+	}
+	.socials img {
+		height: 18px;
+	}
+	.pill-nav a {
+		gap: 6px;
+		padding: 7px 14px;
+		font-size: 15px;
+	}
+	.pill-nav__icon {
+		width: 16px;
+		height: 16px;
 	}
 }
