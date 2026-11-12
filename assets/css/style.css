@@ -98,6 +98,13 @@ body {
 	font-size: 18px;
 	font-weight: 300;
 }
+.header__company-logo {
+	/* Sized in em so it tracks the subtitle on desktop and mobile; the logo
+	   has no descenders, so sitting it on the baseline lines it up with the text. */
+	height: 0.82em;
+	width: auto;
+	vertical-align: baseline;
+}
 .socials ul {
 	display: flex;
 	gap: 16px;
