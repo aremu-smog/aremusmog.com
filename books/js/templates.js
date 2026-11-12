@@ -12,22 +12,27 @@
  *
  * @param {number} year
  * @param {Book[]} books
+ * @param {boolean} isOpen - Whether the year starts expanded.
  * @returns
  */
-const yearAndBooksTemplate = (year, books = []) => {
-	return `	<section>
-					<h2 class="year-title">🔖 ${year}</h2>
-                    ${books
-											.map(book => {
-												return `		<ul class="book-info">
-						<li>
-							<strong>Title:</strong> ${book["Title"]}
-						</li>
-						<li><span><strong>Author:</strong> ${book["Author"]}</span>
-						<span><strong>pages:</strong> ${book["No of Pages"]}</span></li>
-					</ul>`
-											})
-											.join("")}
-			
-				</section>`
+const yearAndBooksTemplate = (year, books = [], isOpen = false) => {
+	return `<details class="year" name="years"${isOpen ? " open" : ""}>
+		<summary class="year__summary">
+			<h2 class="year-title">${year}</h2>
+			<span class="year__arrow" aria-hidden="true"></span>
+		</summary>
+		<ul class="book-list">
+			${books
+				.map(
+					book => `<li class="book">
+				<div>
+					<p class="book__title">${book["Title"]}</p>
+					<p class="book__author">${book["Author"]}</p>
+				</div>
+				<p class="book__pages">${book["No of Pages"]}<span>pp</span></p>
+			</li>`
+				)
+				.join("")}
+		</ul>
+	</details>`
 }
