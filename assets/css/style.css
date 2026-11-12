@@ -266,6 +266,9 @@ body {
 	.socials img {
 		height: 18px;
 	}
+	.pill-nav {
+		bottom: 16px;
+	}
 	.pill-nav a {
 		gap: 6px;
 		padding: 7px 14px;
