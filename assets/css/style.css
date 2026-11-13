@@ -37,7 +37,7 @@ html {
 
 /* Dot-matrix cursors to match the Doto type; hotspots sit on the tip dot */
 html {
-	cursor: url("../icons/cursor.svg") 1 1, auto;
+	cursor: url("../icons/cursor.svg") 2 2, auto;
 }
 p,
 h1,
@@ -46,7 +46,7 @@ h3,
 input,
 textarea,
 [contenteditable] {
-	cursor: url("../icons/cursor-text.svg") 5 11, text;
+	cursor: url("../icons/cursor-text.svg") 6 13, text;
 }
 a,
 button,
@@ -54,7 +54,7 @@ label,
 summary,
 select,
 [role="button"] {
-	cursor: url("../icons/cursor-pointer.svg") 8 1, pointer;
+	cursor: url("../icons/cursor-pointer.svg") 10 2, pointer;
 }
 
 a {
