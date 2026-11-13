@@ -35,6 +35,28 @@ html {
 	background: var(--black-color);
 }
 
+/* Dot-matrix cursors to match the Doto type; hotspots sit on the tip dot */
+html {
+	cursor: url("../icons/cursor.svg") 2 2, auto;
+}
+p,
+h1,
+h2,
+h3,
+input,
+textarea,
+[contenteditable] {
+	cursor: url("../icons/cursor-text.svg") 6 14, text;
+}
+a,
+button,
+label,
+summary,
+select,
+[role="button"] {
+	cursor: url("../icons/cursor-pointer.svg") 9 2, pointer;
+}
+
 a {
 	color: var(--white-color);
 	text-decoration-color: var(--brand-color);
