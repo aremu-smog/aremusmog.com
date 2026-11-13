@@ -73,6 +73,34 @@ a:hover {
 	font-weight: 800;
 }
 
+/* Doto is wider than the body font, so links measured by JS overlay a Doto
+   copy squeezed to the original width instead of reflowing the line. */
+a[data-doto] {
+	position: relative;
+}
+a[data-doto]:hover {
+	font-family: inherit;
+	font-weight: inherit;
+	color: transparent;
+}
+a[data-doto]::after {
+	content: attr(data-doto);
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: var(--font-doto);
+	font-weight: 800;
+	color: var(--brand-color);
+	white-space: nowrap;
+	transform: scaleX(var(--doto-fit, 1));
+	transform-origin: left;
+	visibility: hidden;
+	pointer-events: none;
+}
+a[data-doto]:hover::after {
+	visibility: visible;
+}
+
 .nav ul {
 	list-style-type: none;
 	list-style-position: inside;

@@ -200,6 +200,23 @@
 			document.querySelectorAll("[data-years-since]").forEach((el) => {
 				el.textContent = new Date().getFullYear() - Number(el.dataset.yearsSince)
 			})
+
+			// Fit each text link's Doto hover copy to its body-font width (see a[data-doto])
+			const dotoLinks = document.querySelectorAll(".description a")
+			const fitDotoLinks = () => {
+				const ctx = document.createElement("canvas").getContext("2d")
+				dotoLinks.forEach((link) => {
+					const text = link.textContent.trim().replace(/\s+/g, " ")
+					ctx.font = `800 ${getComputedStyle(link).fontSize} Doto`
+					link.dataset.doto = text
+					link.style.setProperty(
+						"--doto-fit",
+						Math.min(1, link.getBoundingClientRect().width / ctx.measureText(text).width)
+					)
+				})
+			}
+			document.fonts.load("800 1em Doto").then(fitDotoLinks)
+			window.addEventListener("resize", fitDotoLinks)
 		</script>
 	</body>
 </html>
