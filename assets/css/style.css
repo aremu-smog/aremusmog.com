@@ -69,6 +69,8 @@ a {
 a:hover {
 	color: var(--brand-color);
 	text-decoration: none;
+	font-family: var(--font-doto);
+	font-weight: 800;
 }
 
 .nav ul {
