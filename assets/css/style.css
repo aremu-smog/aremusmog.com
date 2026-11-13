@@ -56,6 +56,10 @@ select,
 [role="button"] {
 	cursor: url("../icons/cursor-pointer.svg") 10 2, pointer;
 }
+/* Text inside clickable elements (e.g. the h2 in a books <summary>) keeps the hand */
+:is(a, button, label, summary, select, [role="button"]) * {
+	cursor: inherit;
+}
 
 a {
 	color: var(--white-color);
