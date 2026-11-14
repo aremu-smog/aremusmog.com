@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config"
+import partytown from "./src/integrations/partytown.mjs"
 
 export default defineConfig({
 	site: "https://www.aremusmog.com",
@@ -7,6 +8,7 @@ export default defineConfig({
 	// Compression strips line-break whitespace between text and inline
 	// elements ("past<span>", "reading</a>,<a"), which changes rendered text
 	compressHTML: false,
+	integrations: [partytown()],
 	build: {
 		format: "directory",
 		// The global stylesheet is ~1.5 KB gzipped: inlining it into every page

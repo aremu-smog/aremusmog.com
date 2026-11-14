@@ -1,26 +1,40 @@
 ---
+import { partytownSnippet } from "@qwik.dev/partytown/integration"
+import { partytownLib } from "../../integrations/partytown.mjs"
+
 interface Props {
 	placement: "head" | "body"
 }
 
 const { placement } = Astro.props
 const containerId = "GTM-NSRBMMF7" // also hard-coded in the inline head script
+
+// GTM (and the GA4 gtag.js it loads, ~300 KB) runs in a web worker through
+// Partytown instead of on the main thread. dataLayer.push calls made on the
+// main thread are forwarded to the worker.
+const snippet = partytownSnippet({
+	lib: partytownLib,
+	forward: ["dataLayer.push"],
+})
 ---
 
 {
 	placement === "head" ? (
-		<script is:inline>
-			;(function (w, d, s, l, i) {
-				w[l] = w[l] || []
-				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != "dataLayer" ? "&l=" + l : ""
-				j.async = true
-				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
-				f.parentNode.insertBefore(j, f)
-			})(window, document, "script", "dataLayer", "GTM-NSRBMMF7")
-		</script>
+		<>
+			<script is:inline set:html={snippet} />
+			<script is:inline type="text/partytown">
+				;(function (w, d, s, l, i) {
+					w[l] = w[l] || []
+					w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
+					var f = d.getElementsByTagName(s)[0],
+						j = d.createElement(s),
+						dl = l != "dataLayer" ? "&l=" + l : ""
+					j.async = true
+					j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+					f.parentNode.insertBefore(j, f)
+				})(window, document, "script", "dataLayer", "GTM-NSRBMMF7")
+			</script>
+		</>
 	) : (
 		<noscript>
 			<iframe
