@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro"
 import Header from "../../components/Header.astro"
 import PillNav from "../../components/PillNav.astro"
+import bookshelf from "../../assets/images/bookshelf-pointillism.png"
 import BookStats from "../../screens/books/BookStats.astro"
 import BookYear from "../../screens/books/BookYear.astro"
 import { getBooksByYear } from "../../screens/books/books"
@@ -9,6 +10,9 @@ import "../../screens/books/books.css"
 
 // Stats are hidden for now, as on the legacy page
 const showStats = false
+
+// The dotted bookshelf compresses better as a palette PNG than as avif/webp
+// at the same fidelity, so the header skips the modern formats for it
 
 const years = await getBooksByYear()
 ---
@@ -23,7 +27,9 @@ const years = await getBooksByYear()
 >
 	<div class="layout">
 		<Header
-			image="/assets/image/bookshelf-pointillism.png"
+			image={bookshelf}
+			imageFormats={[]}
+			imageQuality={60}
 			imageAlt="A bookshelf with books and a plant"
 			title="Reading List"
 			sticky
