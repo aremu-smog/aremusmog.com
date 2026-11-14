@@ -9,5 +9,8 @@ export default defineConfig({
 	compressHTML: false,
 	build: {
 		format: "directory",
+		// The global stylesheet is ~1.5 KB gzipped: inlining it into every page
+		// saves a render-blocking request, which outweighs cross-page caching
+		inlineStylesheets: "always",
 	},
 })

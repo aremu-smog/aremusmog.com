@@ -1,5 +1,6 @@
 ---
 import GTM from "../components/analytics/GTM.astro"
+import "../styles/global.css"
 
 interface Props {
 	title: string
@@ -46,7 +47,6 @@ const {
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist:wght@300;400&display=swap"
 		/>
-		<link rel="stylesheet" href="/assets/css/style.css" />
 		<slot name="head" />
 		<meta name="keywords" content={keywords} />
 		<meta name="author" content={author} />

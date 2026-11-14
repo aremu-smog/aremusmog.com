@@ -37,7 +37,7 @@ html {
 
 /* Dot-matrix cursors to match the Doto type; hotspots sit on the tip dot */
 html {
-	cursor: url("../icons/cursor.svg") 2 2, auto;
+	cursor: url("/assets/icons/cursor.svg") 2 2, auto;
 }
 p,
 h1,
@@ -46,7 +46,7 @@ h3,
 input,
 textarea,
 [contenteditable] {
-	cursor: url("../icons/cursor-text.svg") 6 13, text;
+	cursor: url("/assets/icons/cursor-text.svg") 6 13, text;
 }
 a,
 button,
@@ -54,7 +54,7 @@ label,
 summary,
 select,
 [role="button"] {
-	cursor: url("../icons/cursor-pointer.svg") 10 2, pointer;
+	cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
 }
 /* Text inside clickable elements (e.g. the h2 in a books <summary>) keeps the hand */
 :is(a, button, label, summary, select, [role="button"]) * {
@@ -234,10 +234,10 @@ body {
 	display: block;
 }
 .pill-nav__icon--home {
-	--icon: url("../icons/home.svg");
+	--icon: url("/assets/icons/home.svg");
 }
 .pill-nav__icon--books {
-	--icon: url("../icons/books.svg");
+	--icon: url("/assets/icons/books.svg");
 }
 .pill-nav a:hover {
 	background-color: #262626;
