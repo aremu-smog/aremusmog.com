@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Header from "../../components/Header.astro"
+import PillNav from "../../components/PillNav.astro"
+import BookStats from "../../components/BookStats.astro"
+import { getBooksByYear } from "../../lib/books"
+
+// Stats are hidden for now, as on the legacy page
+const showStats = false
+
+const years = await getBooksByYear()
+---
+
+<BaseLayout
+	title="Reading List - Aremu Oluwagbamila"
+	description="Looking for something read? Here is pretty much everything I have read since 2020. It includes biographies, Nigerian fiction, business books, financial management and literacy, faith, etc"
+	ogImage="https://www.aremusmog.com/assets/image/og/og-books-v3.jpg"
+	url="https://www.aremusmog.com/books"
+	keywords="Aremu, Aremu Oluwagbamila, Aremu Smog, Frontend Engineer, Software Engineer"
+	author="Aremu Smog"
+>
+	<div class="layout">
+		<Header
+			image="/assets/image/bookshelf-pointillism.png"
+			imageAlt="A bookshelf with books and a plant"
+			title="Reading List"
+			sticky
+		>
+			<Fragment slot="subtitle">Everything I have read since 2020</Fragment>
+		</Header>
+
+		<main>
+			<article class="description">
+				{showStats && <BookStats />}
+				<section id="books_list">
+					{
+						years.map(({ year, books }, index) => (
+							<details class="year" name="years" open={index === 0}>
+								<summary class="year__summary">
+									<h2 class="year-title">{year}</h2>
+									<span class="year__arrow" aria-hidden="true" />
+								</summary>
+								<ul class="book-list">
+									{books.map((book) => (
+										<li class="book">
+											<div>
+												<p class="book__title">{book.title}</p>
+												<p class="book__author">{book.author}</p>
+											</div>
+											<p class="book__pages">{book.pages}<span>pp</span></p>
+										</li>
+									))}
+								</ul>
+							</details>
+						))
+					}
+				</section>
+			</article>
+		</main>
+	</div>
+	<PillNav />
+</BaseLayout>
+
+<style is:global>
+	.stats {
+		display: flex;
+		gap: 24px;
+	}
+	.stats-title {
+		text-transform: uppercase;
+		font-size: 12px;
+		margin-bottom: -8px;
+	}
+	.stats-value {
+		font-family: var(--font-doto);
+		font-size: 32px;
+		line-height: 0px;
+		font-weight: 800;
+	}
+
+	.year-title {
+		font-family: var(--font-doto);
+		font-weight: 800;
+		font-size: 32px;
+		margin: 13px 0;
+	}
+
+	.year {
+		border-bottom: 0.5px solid #333;
+	}
+	.year__summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
+		list-style: none;
+	}
+	.year__summary::-webkit-details-marker {
+		display: none;
+	}
+	.year__summary:hover .year__arrow {
+		opacity: 1;
+	}
+	.year__arrow {
+		width: 18px;
+		height: 12px;
+		background-color: currentColor;
+		opacity: 0.6;
+		-webkit-mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+		mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+		transition:
+			transform 0.2s ease-in-out,
+			opacity 0.2s ease-in-out;
+	}
+	.year[open] .year__arrow {
+		transform: rotate(180deg);
+	}
+	.year[open] .book-list {
+		margin-bottom: 24px;
+	}
+	.book-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.book {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 16px;
+		padding: 14px 0;
+		border-bottom: 0.5px solid #333;
+	}
+	.book:last-child {
+		border-bottom: none;
+	}
+	.book p {
+		margin: 0;
+	}
+	.book__title {
+		font-size: 17px;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+	.book__author {
+		margin-top: 2px;
+		font-size: 14px;
+		color: #9a9a9a;
+	}
+	.book__pages {
+		flex: none;
+		font-family: var(--font-doto);
+		font-size: 18px;
+		font-weight: 800;
+	}
+	.book__pages span {
+		margin-left: 4px;
+		font-family: var(--font-body);
+		font-size: 12px;
+		font-weight: 400;
+		color: #9a9a9a;
+	}
+
+	@media screen and (max-width: 600px) {
+		.stats {
+			display: none;
+		}
+	}
+</style>
