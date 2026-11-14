@@ -1,14 +1,78 @@
 ---
-// Placeholder until the home page is ported (astro/05-home-page)
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Header from "../components/Header.astro"
+import PillNav from "../components/PillNav.astro"
+import Socials from "../components/Socials.astro"
+
+const yearsSince = 2018
+const years = new Date().getFullYear() - yearsSince
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Aremu Oluwagbamila (SMOG)</title>
-	</head>
-	<body>
-		<p>Astro migration in progress.</p>
-	</body>
-</html>
+<BaseLayout
+	title="Aremu Oluwagbamila (SMOG)"
+	description="Aremu Oluwagbamila Smog is a senior mobile and frontend engineer with more than 5 years of experience building web and mobile apps across different industries including but not limited to FinTech, eCommerce, Social Media, Marketing, and Agency"
+	ogDescription="Aremu is a senior software engineer with 8 years of experience building web and mobile apps across fintech, crypto and e-commerce. Co-founder and CTO of xtrackr."
+	ogImage="https://www.aremusmog.com/assets/image/og/og-home-v3.jpg"
+	url="https://www.aremusmog.com"
+	keywords="Aremu, Aremu Oluwagbamila, Aremu Smog, Frontend Engineer, Mobile Engineer, Software Engineer"
+	author="Aremu Oluwagbamila"
+>
+	<div class="layout">
+		<Header
+			image="/assets/image/aremu-portrait-dot.png"
+			imageAlt="Aremu Oluwagbamila (SMOG)"
+			title="Aremu Oluwagbamila"
+		>
+			<Fragment slot="subtitle">
+				Senior Mobile Engineer,
+				<a href="https://tix.africa" target="_blank" class="header__company"
+					><img
+						src="/assets/icons/tix_africa.svg"
+						alt="Tix.africa"
+						class="header__company-logo"
+					/></a
+				>
+			</Fragment>
+			<Socials />
+		</Header>
+
+		<main>
+			<article class="description">
+				<p>
+					I've spent the past
+					<span data-years-since={yearsSince}>{years}</span> years building web and
+					mobile apps across fintech, crypto and e-commerce, though I originally set
+					out as a designer working across brand, product and motion.
+				</p>
+				<p>
+					Design taught me to think in processes and to tie my work to what the
+					business needs. Building software taught me it isn't enough for me to
+					succeed alone; the people around me have to win too. I spent most of my
+					career at
+					<a href="https://quidax.io" target="_blank">Quidax</a>, growing from
+					frontend engineer to engineering manager and helping launch a product that
+					moved ₦1.2 billion in its first three months.
+				</p>
+				<p>
+					Today, I'm co-founder and CTO at
+					<a href="https://xtrackr.app" target="_blank">xtrackr</a>, the only app
+					you need to track your subscriptions and recurring expenses. Outside work,
+					I'm
+					<a href="/books/">reading</a>,
+					<a
+						href="https://strava.app.link/G5o0UpOKPSb"
+						target="_blank"
+						rel="no-follow">cycling</a
+					>
+					or dancing salsa.
+				</p>
+			</article>
+		</main>
+	</div>
+	<PillNav />
+	<script is:inline>
+		document.querySelectorAll("[data-years-since]").forEach((el) => {
+			el.textContent = new Date().getFullYear() - Number(el.dataset.yearsSince)
+		})
+	</script>
+</BaseLayout>
