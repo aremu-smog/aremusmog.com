@@ -1,0 +1,32 @@
+---
+import type { Book } from "./books"
+
+interface Props {
+	year: number
+	books: Book[]
+	/** Whether the year starts expanded */
+	open?: boolean
+}
+
+const { year, books, open = false } = Astro.props
+---
+
+<details class="year" name="years" open={open}>
+	<summary class="year__summary">
+		<h2 class="year-title">{year}</h2>
+		<span class="year__arrow" aria-hidden="true"></span>
+	</summary>
+	<ul class="book-list">
+		{
+			books.map((book) => (
+				<li class="book">
+					<div>
+						<p class="book__title">{book.title}</p>
+						<p class="book__author">{book.author}</p>
+					</div>
+					<p class="book__pages">{book.pages}<span>pp</span></p>
+				</li>
+			))
+		}
+	</ul>
+</details>
