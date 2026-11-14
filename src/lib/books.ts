@@ -12,9 +12,8 @@ export interface BookStats {
 	totalPages: number
 }
 
-// Mirrors the legacy books.js filter (`book.Status` truthy), which hides
-// books whose status is an empty string.
-const isListed = (book: Book) => Boolean(book.status)
+// Only finished books are shown, matching the legacy page
+const isListed = (book: Book) => book.status === "completed"
 
 /** Years sorted newest first, each with its listed books in source order. */
 export async function getBooksByYear(): Promise<BookYear[]> {

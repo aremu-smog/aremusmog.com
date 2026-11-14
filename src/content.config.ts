@@ -2,10 +2,8 @@ import { defineCollection } from "astro:content"
 import { glob } from "astro/loaders"
 import { z } from "astro/zod"
 
-// Values copied verbatim from the legacy books.js. "" marks books that were
-// listed but never finished (the legacy page hides them), and "Completed "
-// with a trailing space appears on two 2024 entries.
-const bookStatus = z.enum(["Completed", "Completed ", ""])
+// "unfinished" marks books that were listed but never finished; the page hides them
+const bookStatus = z.enum(["completed", "unfinished"])
 
 const book = z.object({
 	title: z.string(),

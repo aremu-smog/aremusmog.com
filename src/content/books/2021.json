@@ -5,25 +5,25 @@
 			"title": "Atomic Habits",
 			"author": "James Clear",
 			"pages": 400,
-			"status": "Completed"
+			"status": "completed"
 		},
 		{
 			"title": "The Opinionated Guide to React",
 			"author": "",
 			"pages": 0,
-			"status": ""
+			"status": "unfinished"
 		},
 		{
 			"title": "Confessions of an Advertising Man",
 			"author": "David Ogilvy",
 			"pages": 100,
-			"status": "Completed"
+			"status": "completed"
 		},
 		{
 			"title": "The Power of Full Engagement, by Jim Loehr and Tony Schwartz",
 			"author": "",
 			"pages": 0,
-			"status": ""
+			"status": "unfinished"
 		}
 	]
 }
