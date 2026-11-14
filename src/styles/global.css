@@ -324,11 +324,11 @@ body {
 		display: none;
 	}
 	body {
-		padding: 1.5rem 1.5rem 6rem;
+		padding: 1.5rem 1.5rem 7.5rem;
 	}
 	.app-version {
 		/* Centred in the gap below the pill nav, which is raised to make room */
-		bottom: 8px;
+		bottom: 14px;
 		padding: 0 1.5rem;
 		line-height: 12px;
 		text-align: center;
@@ -352,7 +352,7 @@ body {
 	}
 	.pill-nav {
 		/* Leaves room for .app-version underneath at the end of the page */
-		bottom: 30px;
+		bottom: 44px;
 	}
 	.pill-nav a {
 		gap: 6px;
