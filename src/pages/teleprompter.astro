@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+---
+// Standalone page: no shared layout, stylesheet, fonts or GTM
+---
+
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,7 +12,7 @@
 			name="description"
 			content="Deadass simple text editor/telemprompter"
 		/>
-		<style>
+		<style is:inline>
 			body {
 				padding: 0;
 				margin: 0;
@@ -81,7 +85,7 @@
 			</div>
 		</section>
 
-		<script>
+		<script is:inline>
 			const editor = document.querySelector("textarea")
 
 			const alignButtons = document.querySelectorAll(".text-align")
