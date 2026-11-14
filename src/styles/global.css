@@ -327,9 +327,10 @@ body {
 		padding: 1.5rem 1.5rem 6rem;
 	}
 	.app-version {
-		/* Centred just above the pill nav, whose top edge is 62px up on mobile */
-		bottom: 72px;
+		/* Centred in the gap below the pill nav, which is raised to make room */
+		bottom: 8px;
 		padding: 0 1.5rem;
+		line-height: 12px;
 		text-align: center;
 	}
 	.header__image {
@@ -350,7 +351,8 @@ body {
 		height: 18px;
 	}
 	.pill-nav {
-		bottom: 16px;
+		/* Leaves room for .app-version underneath at the end of the page */
+		bottom: 30px;
 	}
 	.pill-nav a {
 		gap: 6px;
