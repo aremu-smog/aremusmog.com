@@ -1,0 +1,46 @@
+.year[open] .post-list {
+	margin-bottom: 24px;
+}
+.post-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.post {
+	border-bottom: 0.5px solid #333;
+}
+.post:last-child {
+	border-bottom: none;
+}
+.post__link {
+	display: block;
+	padding: 16px 0;
+	color: inherit;
+	text-decoration: none;
+	cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
+}
+.post p {
+	margin: 0;
+}
+.post__meta {
+	display: flex;
+	gap: 6px;
+	font-size: 13px;
+	color: #9a9a9a;
+}
+.post__title {
+	margin-top: 4px;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+.post__link:hover .post__title {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+.post__excerpt {
+	margin-top: 6px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #9a9a9a;
+}

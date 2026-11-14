@@ -1,0 +1,37 @@
+.year-title {
+	font-family: var(--font-doto);
+	font-weight: 800;
+	font-size: 32px;
+	margin: 13px 0;
+}
+
+.year {
+	border-bottom: 0.5px solid #333;
+}
+.year__summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
+	list-style: none;
+}
+.year__summary::-webkit-details-marker {
+	display: none;
+}
+.year__summary:hover .year__arrow {
+	opacity: 1;
+}
+.year__arrow {
+	width: 18px;
+	height: 12px;
+	background-color: currentColor;
+	opacity: 0.6;
+	-webkit-mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+	mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+	transition:
+		transform 0.2s ease-in-out,
+		opacity 0.2s ease-in-out;
+}
+.year[open] .year__arrow {
+	transform: rotate(180deg);
+}

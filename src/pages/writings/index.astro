@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Header from "../../components/Header.astro"
+import PillNav from "../../components/PillNav.astro"
+import artwork from "../../assets/images/writings-pointillism.png"
+import PostYear from "../../screens/writings/PostYear.astro"
+import { getPostsByYear } from "../../screens/writings/writings"
+import "../../screens/writings/writings.css"
+
+const years = await getPostsByYear()
+---
+
+<BaseLayout
+	title="Writings - Aremu Oluwagbamila"
+	description="Essays and notes on engineering, startups, faith, music and life, from my Medium."
+	ogImage="https://www.aremusmog.com/assets/image/og/og-home-v3.jpg"
+	url="https://www.aremusmog.com/writings"
+	keywords="Aremu, Aremu Oluwagbamila, Aremu Smog, Frontend Engineer, Software Engineer, Writings, Medium"
+	author="Aremu Smog"
+>
+	<div class="layout">
+		<Header
+			image={artwork}
+			imageFormats={[]}
+			imageQuality={60}
+			imageAlt="A dotted sheet of writing with a pen"
+			title="Writings"
+			sticky
+		>
+			<Fragment slot="subtitle">Things I have written on Medium</Fragment>
+		</Header>
+
+		<main>
+			<article class="description">
+				<section id="writings_list">
+					{years.map(({ year, posts }, index) => <PostYear year={year} posts={posts} open={index === 0} />)}
+				</section>
+			</article>
+		</main>
+	</div>
+	<PillNav />
+</BaseLayout>
