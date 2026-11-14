@@ -1,0 +1,62 @@
+---
+import type { ImageMetadata, ImageOutputFormat } from "astro"
+import { getImage } from "astro:assets"
+
+interface Props {
+	/** Square artwork at 2x the 160px display size */
+	image: ImageMetadata
+	imageAlt: string
+	/**
+	 * Modern formats offered ahead of the PNG fallback. Pass `[]` when the
+	 * palette PNG is already smaller than avif/webp at the same fidelity.
+	 */
+	imageFormats?: ImageOutputFormat[]
+	/** Encoder quality shared by every format (palette quantisation for PNG) */
+	imageQuality?: number
+	title: string
+	/** Adds `header--sticky` (used on the books page) */
+	sticky?: boolean
+}
+
+const {
+	image,
+	imageAlt,
+	imageFormats = ["avif", "webp"],
+	imageQuality = 70,
+	title,
+	sticky = false,
+} = Astro.props
+
+// Only the full-size (2x) rendition is generated, and the browser scales it
+// down on 1x screens as it did before. A pre-scaled 1x file would be smaller,
+// but resampling blurs the dot pattern into flat grey, so it looks different.
+const [fallback, ...sources] = await Promise.all(
+	["png", ...imageFormats].map((format) =>
+		getImage({ src: image, format, quality: imageQuality }),
+	),
+)
+---
+
+<header class:list={["header", { "header--sticky": sticky }]}>
+	<picture>
+		{
+			sources.map((source, index) => (
+				<source srcset={source.src} type={`image/${imageFormats[index]}`} />
+			))
+		}
+		{/* The header image is the LCP element, so it loads eagerly at high priority */}
+		<img
+			src={fallback.src}
+			alt={imageAlt}
+			width="160"
+			height="160"
+			loading="eager"
+			fetchpriority="high"
+			decoding="sync"
+			class="header__image"
+		/>
+	</picture>
+	<h1 class="header__title"><a href="/">{title}</a></h1>
+	<p class="header__subtitle"><slot name="subtitle" /></p>
+	<slot />
+</header>

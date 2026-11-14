@@ -1,0 +1,71 @@
+---
+import { Font } from "astro:assets"
+import GTM from "../components/analytics/GTM.astro"
+import "../styles/global.css"
+
+interface Props {
+	title: string
+	description: string
+	/** Open Graph / Twitter description, when it differs from the meta description */
+	ogDescription?: string
+	ogImage: string
+	/** Canonical URL, used for og:url and twitter:url */
+	url: string
+	keywords: string
+	author: string
+}
+
+const {
+	title,
+	description,
+	ogDescription = description,
+	ogImage,
+	url,
+	keywords,
+	author,
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/assets/image/favicon.svg" type="image/svg+xml" />
+		<link
+			rel="icon"
+			href="/assets/image/favicon-32.png"
+			type="image/png"
+			sizes="32x32"
+		/>
+		<link rel="apple-touch-icon" href="/assets/image/apple-touch-icon.png" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<!-- Both families are visible above the fold on every page -->
+		<Font cssVariable="--font-doto" preload />
+		<Font cssVariable="--font-body" preload />
+		<slot name="head" />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content={author} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={ogImage} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={ogDescription} />
+		<meta name="twitter:url" content={url} />
+		<meta name="twitter:image" content={ogImage} />
+		<GTM placement="head" />
+	</head>
+	<body>
+		<GTM placement="body" />
+		<slot />
+	</body>
+</html>

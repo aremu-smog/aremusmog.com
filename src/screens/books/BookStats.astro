@@ -1,0 +1,16 @@
+---
+import { getBookStats } from "./books"
+
+const { totalBooks, totalPages } = await getBookStats()
+---
+
+<section class="stats">
+	<div>
+		<p class="stats-title">Total No. of Pages</p>
+		<h3 class="stats-value" id="total_no_of_pages">{totalPages.toLocaleString("en-US")}</h3>
+	</div>
+	<div>
+		<p class="stats-title">Total No. of Books</p>
+		<h3 class="stats-value" id="total_no_of_books">{totalBooks}</h3>
+	</div>
+</section>

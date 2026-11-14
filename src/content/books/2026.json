@@ -1,0 +1,47 @@
+{
+	"year": 2026,
+	"books": [
+		{
+			"title": "The Art of Spending Money",
+			"author": "Morgan Housel",
+			"pages": 220,
+			"status": "completed"
+		},
+		{
+			"title": "Ego is the enemy",
+			"author": "Ryan Holiday",
+			"pages": 268,
+			"status": "completed"
+		},
+		{
+			"title": "The Secret Lives of Baba Segi's wives",
+			"author": "Lola Shoneyin",
+			"pages": 244,
+			"status": "completed"
+		},
+		{
+			"title": "How to Win Friends and Influence People",
+			"author": "Dale Carnegie",
+			"pages": 268,
+			"status": "completed"
+		},
+		{
+			"title": "Making It Big",
+			"author": "Femi Otedola",
+			"pages": 274,
+			"status": "completed"
+		},
+		{
+			"title": "The 5AM Club",
+			"author": "Robin Sharma",
+			"pages": 314,
+			"status": "completed"
+		},
+		{
+			"title": "Nexus",
+			"author": "Yuval Noah Harari",
+			"pages": 406,
+			"status": "completed"
+		}
+	]
+}

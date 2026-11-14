@@ -1,0 +1,329 @@
+:root {
+	--brand-color: #d5d5d5;
+	--black-color: #0e0e0e;
+	--white-color: #d5d5d5;
+	/* --font-doto and --font-body are defined by Astro's fonts API
+	   (astro.config.mjs) through <Font /> in BaseLayout */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Custom scrollbar */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: #3a3a3a var(--black-color);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: var(--black-color);
+}
+::-webkit-scrollbar-thumb {
+	background-color: #2a2a2a;
+	border: 2px solid var(--black-color);
+	border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #9a9a9a;
+}
+::-webkit-scrollbar-corner {
+	background: var(--black-color);
+}
+
+/* Dot-matrix cursors to match the Doto type; hotspots sit on the tip dot */
+html {
+	cursor: url("/assets/icons/cursor.svg") 2 2, auto;
+}
+p,
+h1,
+h2,
+h3,
+input,
+textarea,
+[contenteditable] {
+	cursor: url("/assets/icons/cursor-text.svg") 6 13, text;
+}
+a,
+button,
+label,
+summary,
+select,
+[role="button"] {
+	cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
+}
+/* Text inside clickable elements (e.g. the h2 in a books <summary>) keeps the hand */
+:is(a, button, label, summary, select, [role="button"]) * {
+	cursor: inherit;
+}
+
+a {
+	color: var(--white-color);
+	text-decoration-color: var(--brand-color);
+}
+
+a:hover {
+	color: var(--brand-color);
+	text-decoration: none;
+	font-family: var(--font-doto);
+	font-weight: 800;
+}
+
+.nav ul {
+	list-style-type: none;
+	list-style-position: inside;
+	list-style: none;
+	margin-left: -24px;
+}
+
+.nav ul > li {
+	display: inline-block;
+	margin-left: -16px;
+}
+
+.nav ul > li:not(:first-child) {
+	margin-left: 16px;
+}
+
+.hide__pc {
+	display: none;
+}
+
+.hide__mobile {
+	display: inline-block;
+}
+body {
+	font-family: var(--font-body);
+	font-weight: 400;
+	background-color: var(--black-color);
+	color: var(--white-color);
+	padding: 2rem 2rem 7rem;
+	margin: 0;
+}
+
+.header {
+	max-width: 500px;
+	margin: auto;
+	margin-top: 2rem;
+	color: var(--brand-color);
+	margin-bottom: 32px;
+}
+.header__image {
+	height: 160px;
+	width: 160px;
+	display: inline-block;
+	object-fit: cover;
+	border-radius: 14px;
+	margin-bottom: -8px;
+	filter: grayscale(100%);
+}
+.header__title {
+	font-family: var(--font-doto);
+	color: var(--brand-color);
+	font-size: 40px;
+	font-weight: 800;
+	text-transform: uppercase;
+	line-height: 48px;
+	margin-bottom: -8px;
+}
+.header__title a {
+	text-decoration: none;
+	color: var(--brand-color);
+}
+.header__subtitle {
+	margin: 16px 0 0;
+	font-size: 18px;
+	font-weight: 300;
+}
+.header__company-logo {
+	/* Sized in em so it tracks the subtitle on desktop and mobile; the logo
+	   has no descenders, so sitting it on the baseline lines it up with the text. */
+	height: 0.82em;
+	width: auto;
+	vertical-align: baseline;
+}
+.socials ul {
+	display: flex;
+	gap: 16px;
+	list-style: none;
+	margin: 16px 0 0;
+	padding: 0;
+}
+.socials a {
+	display: block;
+	transition: opacity 0.2s ease-in-out;
+}
+.socials a:hover {
+	opacity: 0.5;
+}
+.socials img {
+	display: block;
+	width: auto;
+	height: 22px;
+}
+.header__break {
+	display: none;
+}
+
+.nav {
+	margin-top: 20%;
+}
+
+.description {
+	max-width: 500px;
+	line-height: 1.6;
+	margin: auto;
+	font-family: var(--font-body);
+	font-weight: 300;
+}
+
+.pill-nav {
+	position: fixed;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 4px;
+	padding: 6px;
+	border: 1px solid #2a2a2a;
+	border-radius: 999px;
+	background-color: #1a1a1a;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+	z-index: 10;
+}
+.pill-nav a {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 18px;
+	border-radius: 999px;
+	font-family: var(--font-doto);
+	font-size: 18px;
+	font-weight: 800;
+	color: #9a9a9a;
+	text-decoration: none;
+	transition:
+		background-color 0.2s ease-in-out,
+		color 0.2s ease-in-out;
+}
+.pill-nav__icon {
+	display: none;
+	width: 20px;
+	height: 20px;
+	background-color: currentColor;
+	-webkit-mask: var(--icon) center / contain no-repeat;
+	mask: var(--icon) center / contain no-repeat;
+}
+.pill-nav a[aria-current="page"] .pill-nav__icon {
+	display: block;
+}
+.pill-nav__icon--home {
+	--icon: url("/assets/icons/home.svg");
+}
+.pill-nav__icon--books {
+	--icon: url("/assets/icons/books.svg");
+}
+.pill-nav a:hover {
+	background-color: #262626;
+	color: var(--white-color);
+}
+.pill-nav a[aria-current="page"] {
+	background-color: var(--white-color);
+	color: var(--black-color);
+}
+
+.illustrations {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 48px;
+	max-width: 500px;
+	margin: 64px auto 0;
+}
+.illustrations img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+@media screen and (min-width: 1100px) {
+	.layout {
+		display: flex;
+		align-items: flex-start;
+		gap: 48px;
+		max-width: 1100px;
+		margin: 2rem auto 0;
+	}
+	.layout .header {
+		flex: 0 0 440px;
+		max-width: none;
+		margin: 0;
+	}
+	.layout .header__title {
+		white-space: nowrap;
+	}
+	.layout .header--sticky {
+		position: sticky;
+		top: 4rem;
+	}
+	.layout main {
+		flex: 1;
+	}
+	.layout .description {
+		margin: 0;
+	}
+	.layout .description > p:first-child {
+		margin-top: 0;
+	}
+	.illustrations {
+		max-width: 1100px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header {
+		margin-top: 0;
+	}
+	.hide__pc {
+		display: inline-block;
+	}
+	.hide__mobile {
+		display: none;
+	}
+	body {
+		padding: 1.5rem 1.5rem 6rem;
+	}
+	.header__image {
+		height: 128px;
+		width: 128px;
+	}
+	.header__title {
+		font-size: 28px;
+		line-height: 34px;
+	}
+	.header__subtitle {
+		font-size: 16px;
+	}
+	.socials ul {
+		gap: 12px;
+	}
+	.socials img {
+		height: 18px;
+	}
+	.pill-nav {
+		bottom: 16px;
+	}
+	.pill-nav a {
+		gap: 6px;
+		padding: 7px 14px;
+		font-size: 15px;
+	}
+	.pill-nav__icon {
+		width: 16px;
+		height: 16px;
+	}
+}

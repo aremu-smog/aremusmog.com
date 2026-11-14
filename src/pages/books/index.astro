@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Header from "../../components/Header.astro"
+import PillNav from "../../components/PillNav.astro"
+import bookshelf from "../../assets/images/bookshelf-pointillism.png"
+import BookStats from "../../screens/books/BookStats.astro"
+import BookYear from "../../screens/books/BookYear.astro"
+import { getBooksByYear } from "../../screens/books/books"
+import "../../screens/books/books.css"
+
+// Stats are hidden for now, as on the legacy page
+const showStats = false
+
+// The dotted bookshelf compresses better as a palette PNG than as avif/webp
+// at the same fidelity, so the header skips the modern formats for it
+
+const years = await getBooksByYear()
+---
+
+<BaseLayout
+	title="Reading List - Aremu Oluwagbamila"
+	description="Looking for something read? Here is pretty much everything I have read since 2020. It includes biographies, Nigerian fiction, business books, financial management and literacy, faith, etc"
+	ogImage="https://www.aremusmog.com/assets/image/og/og-books-v3.jpg"
+	url="https://www.aremusmog.com/books"
+	keywords="Aremu, Aremu Oluwagbamila, Aremu Smog, Frontend Engineer, Software Engineer"
+	author="Aremu Smog"
+>
+	<div class="layout">
+		<Header
+			image={bookshelf}
+			imageFormats={[]}
+			imageQuality={60}
+			imageAlt="A bookshelf with books and a plant"
+			title="Reading List"
+			sticky
+		>
+			<Fragment slot="subtitle">Everything I have read since 2020</Fragment>
+		</Header>
+
+		<main>
+			<article class="description">
+				{showStats && <BookStats />}
+				<section id="books_list">
+					{years.map(({ year, books }, index) => <BookYear year={year} books={books} open={index === 0} />)}
+				</section>
+			</article>
+		</main>
+	</div>
+	<PillNav />
+</BaseLayout>
