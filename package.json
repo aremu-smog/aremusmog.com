@@ -1,5 +1,6 @@
 {
 	"name": "aremusmog.com",
+	"version": "0.3.0",
 	"type": "module",
 	"private": true,
 	"packageManager": "pnpm@12.14.0",

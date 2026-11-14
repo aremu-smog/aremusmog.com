@@ -103,6 +103,11 @@ body {
 	color: var(--white-color);
 	padding: 2rem 2rem 7rem;
 	margin: 0;
+	/* At least a screen tall, so .app-version sits at the bottom of the screen
+	   on short pages and at the end of the page on long ones */
+	position: relative;
+	min-height: 100vh;
+	min-height: 100dvh;
 }
 
 .header {
@@ -179,6 +184,24 @@ body {
 	margin: auto;
 	font-family: var(--font-body);
 	font-weight: 300;
+}
+
+.app-version {
+	/* Sits at the bottom of the page, in body's bottom padding below the
+	   content. The padding matches body's, so the text lines up with the
+	   content column at every width */
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 8px;
+	max-width: calc(500px + 4rem);
+	margin: 0 auto;
+	padding: 0 2rem;
+	pointer-events: none;
+	font-family: var(--font-doto);
+	font-size: 12px;
+	font-weight: 800;
+	color: #9a9a9a;
 }
 
 .pill-nav {
@@ -282,6 +305,12 @@ body {
 	.illustrations {
 		max-width: 1100px;
 	}
+	.app-version {
+		/* Pinned in the two-column layout: it sits under the header column,
+		   where no content scrolls past it */
+		position: fixed;
+		max-width: calc(1100px + 4rem);
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -295,7 +324,14 @@ body {
 		display: none;
 	}
 	body {
-		padding: 1.5rem 1.5rem 6rem;
+		padding: 1.5rem 1.5rem 7.5rem;
+	}
+	.app-version {
+		/* Centred in the gap below the pill nav, which is raised to make room */
+		bottom: 14px;
+		padding: 0 1.5rem;
+		line-height: 12px;
+		text-align: center;
 	}
 	.header__image {
 		height: 128px;
@@ -315,7 +351,8 @@ body {
 		height: 18px;
 	}
 	.pill-nav {
-		bottom: 16px;
+		/* Leaves room for .app-version underneath at the end of the page */
+		bottom: 44px;
 	}
 	.pill-nav a {
 		gap: 6px;
