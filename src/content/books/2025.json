@@ -1,0 +1,65 @@
+{
+	"year": 2025,
+	"books": [
+		{
+			"title": "Deep Work",
+			"author": "Cal NewPort",
+			"pages": 263,
+			"status": "completed"
+		},
+		{
+			"title": "The Lean Startup",
+			"author": "Eric Ries",
+			"pages": 290,
+			"status": "completed"
+		},
+		{
+			"title": "Elon Musk",
+			"author": "Walter Isaacson",
+			"pages": 615,
+			"status": "completed"
+		},
+		{
+			"title": "Steve Jobs",
+			"author": "Walter Isaacson",
+			"pages": 570,
+			"status": "completed"
+		},
+		{
+			"title": "When Breath Becomes Air",
+			"author": "Paul Kalanithi",
+			"pages": 228,
+			"status": "completed"
+		},
+		{
+			"title": "No Rules; Rules: Netflix and the Culture of Reinvention",
+			"author": "Reed Hastings & Erin Meyer",
+			"pages": 272,
+			"status": "completed"
+		},
+		{
+			"title": "The 360 degrees leader",
+			"author": "John C. Maxwell",
+			"pages": 306,
+			"status": "completed"
+		},
+		{
+			"title": "Radical Simplicity",
+			"author": "Ken Allen",
+			"pages": 198,
+			"status": "completed"
+		},
+		{
+			"title": "Be(coming) Nigerian: a guide",
+			"author": "Elnathan John",
+			"pages": 148,
+			"status": "completed"
+		},
+		{
+			"title": "A Broken People's Playlist",
+			"author": "Chimeka Garricks",
+			"pages": 250,
+			"status": "completed"
+		}
+	]
+}
