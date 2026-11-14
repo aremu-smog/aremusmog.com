@@ -1,0 +1,28 @@
+---
+import type { ArchiveCategory } from "./archives"
+
+interface Props {
+	category: ArchiveCategory
+}
+
+const { category } = Astro.props
+const { title, slug, blurb, live } = category
+---
+
+<li class="archive-row">
+	{
+		live ? (
+			<a class="archive-row__inner archive-row__inner--live" href={`/archives/${slug}`}>
+				<h2 class="archive-row__title">{title}</h2>
+				<span class="archive-row__arrow" aria-hidden="true" />
+				<p class="archive-row__blurb">{blurb}</p>
+			</a>
+		) : (
+			<div class="archive-row__inner">
+				<h2 class="archive-row__title">{title}</h2>
+				<span class="archive-row__status">Coming soon</span>
+				<p class="archive-row__blurb">{blurb}</p>
+			</div>
+		)
+	}
+</li>
