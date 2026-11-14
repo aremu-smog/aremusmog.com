@@ -2,8 +2,8 @@
 	--brand-color: #d5d5d5;
 	--black-color: #0e0e0e;
 	--white-color: #d5d5d5;
-	--font-doto: "Doto", monospace;
-	--font-body: "Geist", sans-serif;
+	/* --font-doto and --font-body are defined by Astro's fonts API
+	   (astro.config.mjs) through <Font /> in BaseLayout */
 }
 
 * {
@@ -87,18 +87,6 @@ a:hover {
 
 .nav ul > li:not(:first-child) {
 	margin-left: 16px;
-}
-
-@font-face {
-	font-family: "Clash-Display";
-	src: url(/assets/font/ClashDisplay-Regular.ttf);
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: "Clash-Display";
-	src: url(/assets/font/ClashDisplay-Medium.ttf);
-	font-weight: 500;
 }
 
 .hide__pc {
