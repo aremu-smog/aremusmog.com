@@ -181,6 +181,15 @@ body {
 	font-weight: 300;
 }
 
+.app-version {
+	max-width: 500px;
+	margin: 64px auto 0;
+	font-family: var(--font-doto);
+	font-size: 14px;
+	font-weight: 800;
+	color: #9a9a9a;
+}
+
 .pill-nav {
 	position: fixed;
 	bottom: 24px;
@@ -280,6 +289,9 @@ body {
 		margin-top: 0;
 	}
 	.illustrations {
+		max-width: 1100px;
+	}
+	.app-version {
 		max-width: 1100px;
 	}
 }
