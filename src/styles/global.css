@@ -217,6 +217,7 @@ body {
 	background-color: #1a1a1a;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 	z-index: 10;
+	white-space: nowrap;
 }
 .pill-nav a {
 	display: flex;
@@ -362,5 +363,24 @@ body {
 	.pill-nav__icon {
 		width: 16px;
 		height: 16px;
+	}
+}
+
+/* Four pills, with the active one showing its icon, are about 385px wide
+   at the mobile size: narrower phones get a tighter nav (about 295px) so
+   it keeps a gutter on each side */
+@media screen and (max-width: 440px) {
+	.pill-nav {
+		gap: 0;
+		padding: 4px;
+	}
+	.pill-nav a {
+		gap: 4px;
+		padding: 6px 9px;
+		font-size: 13px;
+	}
+	.pill-nav__icon {
+		width: 14px;
+		height: 14px;
 	}
 }

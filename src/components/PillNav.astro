@@ -1,15 +1,21 @@
 ---
 const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/"
 const current = (path: string) => (pathname === path ? "page" : undefined)
+
+// Each item's icon is the matching .pill-nav__icon--<icon> class in global.css
+const items = [
+	{ href: "/", label: "Home", icon: "home" },
+	{ href: "/books", label: "Books", icon: "books" },
+]
 ---
 
 <nav class="pill-nav" aria-label="Main">
-	<a href="/" aria-current={current("/")}
-		><span class="pill-nav__icon pill-nav__icon--home" aria-hidden="true"></span
-		>Home</a
-	>
-	<a href="/books" aria-current={current("/books")}
-		><span class="pill-nav__icon pill-nav__icon--books" aria-hidden="true"></span
-		>Books</a
-	>
+	{
+		items.map(({ href, label, icon }) => (
+			<a href={href} aria-current={current(href)}>
+				<span class={`pill-nav__icon pill-nav__icon--${icon}`} aria-hidden="true" />
+				{label}
+			</a>
+		))
+	}
 </nav>
