@@ -251,6 +251,9 @@ body {
 .pill-nav__icon--books {
 	--icon: url("/assets/icons/books.svg");
 }
+.pill-nav__icon--archives {
+	--icon: url("/assets/icons/archives.svg");
+}
 .pill-nav a:hover {
 	background-color: #262626;
 	color: var(--white-color);
