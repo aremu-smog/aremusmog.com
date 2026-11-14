@@ -1,0 +1,15 @@
+---
+const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/"
+const current = (path: string) => (pathname === path ? "page" : undefined)
+---
+
+<nav class="pill-nav" aria-label="Main">
+	<a href="/" aria-current={current("/")}
+		><span class="pill-nav__icon pill-nav__icon--home" aria-hidden="true"></span
+		>Home</a
+	>
+	<a href="/books/" aria-current={current("/books")}
+		><span class="pill-nav__icon pill-nav__icon--books" aria-hidden="true"></span
+		>Books</a
+	>
+</nav>
