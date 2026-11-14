@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import Header from "../components/Header.astro"
 import PillNav from "../components/PillNav.astro"
 import Socials from "../screens/home/Socials.astro"
+import portrait from "../assets/images/aremu-portrait-dot.png"
 
 const yearsSince = 2018
 const years = new Date().getFullYear() - yearsSince
@@ -19,7 +20,7 @@ const years = new Date().getFullYear() - yearsSince
 >
 	<div class="layout">
 		<Header
-			image="/assets/image/aremu-portrait-dot.png"
+			image={portrait}
 			imageAlt="Aremu Oluwagbamila (SMOG)"
 			title="Aremu Oluwagbamila"
 		>
