@@ -1,0 +1,107 @@
+{
+	"year": 2020,
+	"books": [
+		{
+			"title": "How to Make Love to a Pornographer (A cautionary tale)",
+			"author": "Jenna Jameson",
+			"pages": 647,
+			"status": "Completed"
+		},
+		{
+			"title": "Purple Cow",
+			"author": "Seth Godin",
+			"pages": 151,
+			"status": "Completed"
+		},
+		{
+			"title": "The Book of Joy and Happines",
+			"author": "Desmond Tutu and Dalai Lama",
+			"pages": 237,
+			"status": "Completed"
+		},
+		{
+			"title": "Ego is the Enemy",
+			"author": "Ryan Holiday",
+			"pages": 168,
+			"status": "Completed"
+		},
+		{
+			"title": "Shoe Dog - A memoir of the creator of Nike",
+			"author": "Phil Knight",
+			"pages": 362,
+			"status": "Completed"
+		},
+		{
+			"title": "The Autobiography of Malcom X",
+			"author": "Alex Haley",
+			"pages": 498,
+			"status": "Completed"
+		},
+		{
+			"title": "Nine Lives",
+			"author": "El Nukoya",
+			"pages": 436,
+			"status": "Completed"
+		},
+		{
+			"title": "Big Black Penis",
+			"author": "Shawn Taylor",
+			"pages": 161,
+			"status": "Completed"
+		},
+		{
+			"title": "Nine Hours Till Five",
+			"author": "Margaret Adetimehin",
+			"pages": 280,
+			"status": "Completed"
+		},
+		{
+			"title": "Urichindere",
+			"author": "Dike-Ogu Chukwumerije",
+			"pages": 316,
+			"status": "Completed"
+		},
+		{
+			"title": "Hustle Harder, Hustle Smarter",
+			"author": "Curtis \"50 Cents\" Jackson",
+			"pages": 304,
+			"status": "Completed"
+		},
+		{
+			"title": "How to",
+			"author": "Michael Bierut",
+			"pages": 319,
+			"status": "Completed"
+		},
+		{
+			"title": "The Alchemist",
+			"author": "Paulo Coelho",
+			"pages": 208,
+			"status": "Completed"
+		},
+		{
+			"title": "The Autobiography of Gucci Mane",
+			"author": "Gucci Mane",
+			"pages": 304,
+			"status": "Completed"
+		},
+		{
+			"title": "The 10X Rule: The Difference between Success and Failure",
+			"author": "Grant Cardone",
+			"pages": 296,
+			"status": "Completed"
+		},
+		{
+			"title": "Diaries of a Dead African",
+			"author": "Chuka Nwokolo Jr",
+			"pages": 193,
+			"status": "Completed"
+		},
+		{
+			"title": "I'm Employable",
+			"author": "Vincent Adeoba",
+			"pages": 220,
+			"status": "Completed"
+		}
+	]
+}

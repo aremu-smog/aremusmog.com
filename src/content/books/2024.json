@@ -1,0 +1,83 @@
+{
+	"year": 2024,
+	"books": [
+		{
+			"title": "The Pragmatic Programmer",
+			"author": " Andy Hunt and Dave Thomas",
+			"pages": 0,
+			"status": ""
+		},
+		{
+			"title": "Designing Data-Intensive Applications",
+			"author": "Martin Kleppmann ",
+			"pages": 0,
+			"status": ""
+		},
+		{
+			"title": "Vantage",
+			"author": "Olumide Soyombo",
+			"pages": 297,
+			"status": "Completed"
+		},
+		{
+			"title": "The Mythical Man-Month: Essays on Software Engineering",
+			"author": "",
+			"pages": 0,
+			"status": ""
+		},
+		{
+			"title": "Inspired: How to create products customers love",
+			"author": "Marty Cagan",
+			"pages": 0,
+			"status": ""
+		},
+		{
+			"title": "Escape the Build Trap",
+			"author": "Melissa Perri",
+			"pages": 0,
+			"status": ""
+		},
+		{
+			"title": "Stepping on Toes: My Odyssey at the Nigerian Ports Authority",
+			"author": "Hadiza Bala Usman",
+			"pages": 143,
+			"status": "Completed"
+		},
+		{
+			"title": "The Compound Effect",
+			"author": "Darren Hardy",
+			"pages": 208,
+			"status": "Completed"
+		},
+		{
+			"title": "Sounds of Joy",
+			"author": "Segun Akinlolu ",
+			"pages": 344,
+			"status": "Completed "
+		},
+		{
+			"title": "What They Don't Teach You At Harvard Business School",
+			"author": "Mark H. McComark",
+			"pages": 234,
+			"status": "Completed "
+		},
+		{
+			"title": "Nearly all the men in Lagos are mad",
+			"author": "Damilare Kuku",
+			"pages": 243,
+			"status": "Completed"
+		},
+		{
+			"title": "Only Big BumBum Matters Tomorrow",
+			"author": "Damilare Kuku",
+			"pages": 239,
+			"status": "Completed"
+		},
+		{
+			"title": "The Diary of A CEO",
+			"author": "",
+			"pages": 0,
+			"status": ""
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"year": 2023,
+	"books": [
+		{
+			"title": "Outliers",
+			"author": "Malcolm Gladwell",
+			"pages": 304,
+			"status": "Completed"
+		},
+		{
+			"title": "So Good They Can't Ignore You",
+			"author": "Cal NewPort",
+			"pages": 304,
+			"status": "Completed"
+		},
+		{
+			"title": "Will",
+			"author": "Will Smith with Mark Manson",
+			"pages": 412,
+			"status": "Completed"
+		},
+		{
+			"title": "Clean Code",
+			"author": "Bob C Martin",
+			"pages": 0,
+			"status": ""
+		},
+		{
+			"title": "Amazon Unbound",
+			"author": "Bradstone",
+			"pages": 420,
+			"status": "Completed"
+		},
+		{
+			"title": "Leading in Tough Times",
+			"author": "John C Maxwell",
+			"pages": 132,
+			"status": "Completed"
+		}
+	]
+}

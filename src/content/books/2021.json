@@ -1,0 +1,29 @@
+{
+	"year": 2021,
+	"books": [
+		{
+			"title": "Atomic Habits",
+			"author": "James Clear",
+			"pages": 400,
+			"status": "Completed"
+		},
+		{
+			"title": "The Opinionated Guide to React",
+			"author": "",
+			"pages": 0,
+			"status": ""
+		},
+		{
+			"title": "Confessions of an Advertising Man",
+			"author": "David Ogilvy",
+			"pages": 100,
+			"status": "Completed"
+		},
+		{
+			"title": "The Power of Full Engagement, by Jim Loehr and Tony Schwartz",
+			"author": "",
+			"pages": 0,
+			"status": ""
+		}
+	]
+}
