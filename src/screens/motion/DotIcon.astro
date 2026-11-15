@@ -1,0 +1,24 @@
+---
+// Player icons drawn on a 7x7 dot grid, like the nav icons on their 11x11 one
+const icons = {
+	play: ["X......", "XXX....", "XXXXX..", "XXXXXXX", "XXXXX..", "XXX....", "X......"],
+	pause: ["XX...XX", "XX...XX", "XX...XX", "XX...XX", "XX...XX", "XX...XX", "XX...XX"],
+	sound: ["..X....", ".XX..X.", "XXX...X", "XXX.X.X", "XXX...X", ".XX..X.", "..X...."],
+	muted: ["..X....", ".XX....", "XXX.X.X", "XXX..X.", "XXX.X.X", ".XX....", "..X...."],
+	fullscreen: ["XX...XX", "X.....X", ".......", ".......", ".......", "X.....X", "XX...XX"],
+}
+
+interface Props {
+	name: keyof typeof icons
+	class?: string
+}
+
+const { name, class: className } = Astro.props
+const dots = icons[name].flatMap((row, y) =>
+	[...row].flatMap((cell, x) => (cell === "X" ? [{ x, y }] : [])),
+)
+---
+
+<svg class={className} viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
+	{dots.map(({ x, y }) => <circle cx={x + 0.5} cy={y + 0.5} r="0.42" />)}
+</svg>
