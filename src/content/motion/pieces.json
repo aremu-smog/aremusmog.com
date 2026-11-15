@@ -9,22 +9,22 @@
 		"sound": true
 	},
 	{
-		"id": "gemzone",
-		"title": "Gemzone",
-		"kind": "Ad",
+		"id": "fourth-canvas-showreel",
+		"title": "Fourth Canvas 2017",
+		"kind": "Logo showreel",
 		"order": 2,
 		"width": 720,
 		"height": 720,
 		"sound": true
 	},
 	{
-		"id": "paivot",
-		"title": "Paivot",
-		"kind": "Logo animation",
+		"id": "gemzone",
+		"title": "Gemzone",
+		"kind": "Ad",
 		"order": 3,
 		"width": 720,
 		"height": 720,
-		"sound": false
+		"sound": true
 	},
 	{
 		"id": "iya-eba",
@@ -36,10 +36,19 @@
 		"sound": true
 	},
 	{
+		"id": "paivot",
+		"title": "Paivot",
+		"kind": "Logo animation",
+		"order": 5,
+		"width": 720,
+		"height": 720,
+		"sound": false
+	},
+	{
 		"id": "the-boardroom",
 		"title": "The Boardroom",
 		"kind": "Logo animation",
-		"order": 5,
+		"order": 6,
 		"width": 720,
 		"height": 720,
 		"sound": false
@@ -48,7 +57,7 @@
 		"id": "nike-adeyemi",
 		"title": "Nike Adeyemi Ministry",
 		"kind": "Logo animation",
-		"order": 6,
+		"order": 7,
 		"width": 720,
 		"height": 720,
 		"sound": false
@@ -57,7 +66,7 @@
 		"id": "chicken-n-tinz",
 		"title": "Chicken 'n' Tinz",
 		"kind": "Logo animation",
-		"order": 7,
+		"order": 8,
 		"width": 720,
 		"height": 720,
 		"sound": false
