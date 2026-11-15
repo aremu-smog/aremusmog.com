@@ -54,4 +54,22 @@ const archives = defineCollection({
 	}),
 })
 
-export const collections = { books, writings, archives }
+// Pieces on /archives/motion. Each id names its video in
+// public/assets/video/motion and its poster in src/assets/images/motion
+const motion = defineCollection({
+	loader: file("./src/content/motion/pieces.json"),
+	schema: z.object({
+		title: z.string(),
+		// What the piece is, e.g. "Logo animation"
+		kind: z.string(),
+		// Position on the page, lowest first
+		order: z.number().int(),
+		// The encoded video's size, used for its aspect ratio
+		width: z.number().int().positive(),
+		height: z.number().int().positive(),
+		// Pieces with sound get the volume control; the rest play muted
+		sound: z.boolean(),
+	}),
+})
+
+export const collections = { books, writings, archives, motion }
