@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Header from "../../components/Header.astro"
+import PillNav from "../../components/PillNav.astro"
+import artwork from "../../assets/images/archives-box-pointillism.png"
+import ArchiveRow from "../../screens/archives/ArchiveRow.astro"
+import { getArchiveCategories } from "../../screens/archives/archives"
+import "../../screens/archives/archives.css"
+
+// The dotted archive box is larger as webp than as the PNG fallback, so the
+// header only offers avif ahead of it
+
+const categories = await getArchiveCategories()
+---
+
+<BaseLayout
+	title="Archives - Aremu Oluwagbamila"
+	description="An archive of motion, website and brand design work by Aremu Oluwagbamila (SMOG)"
+	ogImage="https://www.aremusmog.com/assets/image/og/og-archives-v1.jpg"
+	url="https://www.aremusmog.com/archives"
+	keywords="Aremu, Aremu Oluwagbamila, Aremu Smog, Motion Design, Brand Design, Landing Pages"
+	author="Aremu Smog"
+>
+	<div class="layout">
+		<Header
+			image={artwork}
+			imageFormats={["avif"]}
+			imageAlt="A dotted archive box, lid open, full of file folders"
+			title="Archives"
+			sticky
+		>
+			<Fragment slot="subtitle">Motion, websites and brand work</Fragment>
+		</Header>
+
+		<main>
+			<article class="description">
+				<ul class="archive-list">
+					{categories.map((category) => <ArchiveRow category={category} />)}
+				</ul>
+			</article>
+		</main>
+	</div>
+	<PillNav />
+</BaseLayout>

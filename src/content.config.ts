@@ -39,4 +39,19 @@ const writings = defineCollection({
 	}),
 })
 
-export const collections = { books, writings }
+// The categories linked from the archives page. A category is shown as
+// "Coming soon" until its subpage exists and `live` is set to true
+const archives = defineCollection({
+	loader: glob({ pattern: "*.json", base: "./src/content/archives" }),
+	schema: z.object({
+		title: z.string(),
+		// The subpage lives at /archives/<slug>
+		slug: z.string().regex(/^[a-z0-9-]+$/),
+		blurb: z.string(),
+		// Position on the archives page, lowest first
+		order: z.number().int(),
+		live: z.boolean(),
+	}),
+})
+
+export const collections = { books, writings, archives }
