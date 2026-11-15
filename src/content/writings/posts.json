@@ -9,7 +9,8 @@
 			"startup-lessons"
 		],
 		"readingTime": 2,
-		"excerpt": "You don’t have to build out every attractive feature — if Nkem Owoh stuck to just his first wife, the endless rivalry wouldn’t have even started. Surely there…"
+		"excerpt": "You don’t have to build out every attractive feature — if Nkem Owoh stuck to just his first wife, the endless rivalry wouldn’t have even started. Surely there…",
+		"cover": "https://cdn-images-1.medium.com/max/739/0*mA9VYg9wv1FpPQH3"
 	},
 	{
 		"id": "flee-from-every-appearance-of-evil-5fbc8cae2fbf",
@@ -23,7 +24,8 @@
 			"christainity"
 		],
 		"readingTime": 1,
-		"excerpt": "You don’t overcome addiction or sin one time — it’s a never-ending part of your life. Some addictions or sin creep into your life during a midlife crisis, and…"
+		"excerpt": "You don’t overcome addiction or sin one time — it’s a never-ending part of your life. Some addictions or sin creep into your life during a midlife crisis, and…",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*gWje-KoPH_0xxF-i0tf0tg.png"
 	},
 	{
 		"id": "tix-africa-senior-mobile-engineer-interview-experience-6634ceb5843f",
@@ -36,7 +38,8 @@
 			"technical-interview"
 		],
 		"readingTime": 2,
-		"excerpt": "Either because I am now more experienced or skilled, the quality of the interview experiences I have seems to be improving over time, and the one at Tix was…"
+		"excerpt": "Either because I am now more experienced or skilled, the quality of the interview experiences I have seems to be improving over time, and the one at Tix was…",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*6ddP1lT86dmIFKxJkwhlgw.png"
 	},
 	{
 		"id": "plateau-in-case-you-feel-stuck-like-me-44ba8fc9ba58",
@@ -49,7 +52,8 @@
 			"career-advice"
 		],
 		"readingTime": 4,
-		"excerpt": "I started taking a course on SwiftUI about 4months ago — it was supposed to be a 100 days of SwiftUI course — a lesson everyday for 100 days, I am still on day…"
+		"excerpt": "I started taking a course on SwiftUI about 4months ago — it was supposed to be a 100 days of SwiftUI course — a lesson everyday for 100 days, I am still on day…",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*jSkTwaNiUU8I2zRnt3sCkA.png"
 	},
 	{
 		"id": "massive-respect-to-everyone-who-relocates-but-all-of-you-are-mad-5e9fcb624672",
@@ -62,7 +66,8 @@
 			"travel"
 		],
 		"readingTime": 1,
-		"excerpt": "This is now my third day in Rwanda, and I don’t know if I am regretting my decisions or if this is an absolute waste of money. I have gone out for a walk nearly…"
+		"excerpt": "This is now my third day in Rwanda, and I don’t know if I am regretting my decisions or if this is an absolute waste of money. I have gone out for a walk nearly…",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*RBq4q9EHGuFKJiDqAOG2Bw.jpeg"
 	},
 	{
 		"id": "i-have-zero-fights-left-in-me-d0602fe0292e",
@@ -75,7 +80,8 @@
 			"teamwork"
 		],
 		"readingTime": 2,
-		"excerpt": "Before now, I used to feel more responsible than necessary for both things that concern me and those that do not — this was probably one of the things that…"
+		"excerpt": "Before now, I used to feel more responsible than necessary for both things that concern me and those that do not — this was probably one of the things that…",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*7y-eS8kaNDbqv3i-sYThWg.jpeg"
 	},
 	{
 		"id": "adekunle-golds-fuji-is-many-things-fuji-is-not-one-of-them-a45d6ee00388",
@@ -89,7 +95,8 @@
 			"adekunle-gold"
 		],
 		"readingTime": 2,
-		"excerpt": "Fuji is Adekunle Gold’s sixth studio album, released on 30 October, 2025. Yeah, that’s the intro… like the title said: it’s unnecessary. Now, let’s yap."
+		"excerpt": "Fuji is Adekunle Gold’s sixth studio album, released on 30 October, 2025. Yeah, that’s the intro… like the title said: it’s unnecessary. Now, let’s yap.",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*AwrC5f9F1e0tjC4eeMDWsQ.png"
 	},
 	{
 		"id": "its-your-fault-if-you-burn-out-a2230fe12bb9",
@@ -103,7 +110,8 @@
 			"burnout"
 		],
 		"readingTime": 4,
-		"excerpt": "One of the most brilliant engineers I had ever worked with had resigned, for a simple reason: ‘burnout’. This engineer was still in Uni at the time they joined…"
+		"excerpt": "One of the most brilliant engineers I had ever worked with had resigned, for a simple reason: ‘burnout’. This engineer was still in Uni at the time they joined…",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*TNqFyQkebTGpsN37uTrF9A.jpeg"
 	},
 	{
 		"id": "how-to-prevent-the-browser-from-downloading-your-apple-app-site-association-file-45b28ee111b6",
@@ -118,7 +126,8 @@
 			"nextjs"
 		],
 		"readingTime": 1,
-		"excerpt": "Setting up apple-app-site-association is a critical step in creating a 2-way association between your iOS app and website in order to setup univeral links for…"
+		"excerpt": "Setting up apple-app-site-association is a critical step in creating a 2-way association between your iOS app and website in order to setup univeral links for…",
+		"cover": "https://cdn-images-1.medium.com/max/1024/1*FMhva81LKvxAFLW0jMsIOA.png"
 	},
 	{
 		"id": "your-developer-account-needs-to-be-updated-please-visit-developer-registration-f0654389ddcd",
@@ -131,6 +140,7 @@
 			"apple"
 		],
 		"readingTime": 1,
-		"excerpt": "The ‘beautiful’ error above is probably something you would encounter on a fresh/new Apple developer account while trying to create a build with eas and to…"
+		"excerpt": "The ‘beautiful’ error above is probably something you would encounter on a fresh/new Apple developer account while trying to create a build with eas and to…",
+		"cover": null
 	}
 ]
