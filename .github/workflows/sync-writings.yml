@@ -1,0 +1,46 @@
+# Pulls new Medium posts into src/content/writings/posts.json every week and
+# opens a PR when there are any. Merging the PR deploys them via Vercel.
+name: Sync writings
+
+on:
+  schedule:
+    # Mondays at 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-writings
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+
+      # The sync script only uses Node built-ins, so no install is needed
+      - name: Sync posts from Medium
+        run: |
+          corepack enable
+          pnpm sync:writings
+
+      - name: Open or update the PR
+        uses: peter-evans/create-pull-request@v8.1.3
+        with:
+          branch: chore/sync-writings
+          delete-branch: true
+          add-paths: src/content/writings/posts.json
+          commit-message: Sync new Medium posts
+          title: Sync new Medium posts
+          body: |
+            New posts from https://aremusmog.medium.com/feed, merged into `src/content/writings/posts.json` by `pnpm sync:writings`.
+
+            Opened by the weekly **Sync writings** workflow.

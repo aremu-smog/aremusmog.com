@@ -1,5 +1,5 @@
 import { defineCollection } from "astro:content"
-import { glob } from "astro/loaders"
+import { file, glob } from "astro/loaders"
 import { z } from "astro/zod"
 
 // "unfinished" marks books that were listed but never finished; the page hides them
@@ -21,4 +21,22 @@ const books = defineCollection({
 	}),
 })
 
-export const collections = { books }
+// Medium posts, merged in by `pnpm sync:writings`; each id is the post's URL slug
+const writings = defineCollection({
+	loader: file("./src/content/writings/posts.json"),
+	schema: z.object({
+		title: z.string(),
+		// The Medium link without its ?source= tracking query
+		url: z.url(),
+		date: z.coerce.date(),
+		tags: z.array(z.string()),
+		/** Estimated minutes, from the word count */
+		readingTime: z.number().int().positive(),
+		/** Plain text from the first paragraph, cut to about 160 characters */
+		excerpt: z.string(),
+		/** The post's first image on Medium's CDN, or null when it has none */
+		cover: z.url().nullable(),
+	}),
+})
+
+export const collections = { books, writings }
