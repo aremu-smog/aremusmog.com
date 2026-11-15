@@ -226,7 +226,7 @@ body {
 	padding: 8px 18px;
 	border-radius: 999px;
 	font-family: var(--font-doto);
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 800;
 	color: #9a9a9a;
 	text-decoration: none;
@@ -236,8 +236,9 @@ body {
 }
 .pill-nav__icon {
 	display: none;
-	width: 20px;
-	height: 20px;
+	/* A little larger than the 15px label, so the dots stay crisp */
+	width: 18px;
+	height: 18px;
 	background-color: currentColor;
 	-webkit-mask: var(--icon) center / contain no-repeat;
 	mask: var(--icon) center / contain no-repeat;
@@ -373,5 +374,7 @@ body {
 	}
 	.pill-nav__icon {
 		display: block;
+		width: 20px;
+		height: 20px;
 	}
 }
