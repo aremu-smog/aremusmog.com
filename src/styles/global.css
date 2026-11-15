@@ -355,18 +355,21 @@ body {
 		/* Leaves room for .app-version underneath at the end of the page */
 		bottom: 44px;
 	}
-	/* Tab-bar style: every item shows its icon, at full size, above a small
-	   label, which keeps four items narrow enough for a 320px screen */
+	/* Every item shows its icon at full size, and only the current page
+	   shows its label beside it, so four items fit on a 320px screen. The
+	   other labels are hidden visually but stay as the links' names */
 	.pill-nav {
 		gap: 2px;
 		padding: 4px;
 	}
 	.pill-nav a {
-		flex-direction: column;
-		gap: 2px;
-		min-width: 64px;
-		padding: 6px 10px 5px;
-		font-size: 11px;
+		gap: 0;
+		padding: 10px 14px;
+		font-size: 0;
+	}
+	.pill-nav a[aria-current="page"] {
+		gap: 6px;
+		font-size: 14px;
 	}
 	.pill-nav__icon {
 		display: block;
