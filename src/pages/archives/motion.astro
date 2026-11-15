@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Header from "../../components/Header.astro"
+import PillNav from "../../components/PillNav.astro"
+import showreelPoster from "../../assets/images/motion/showreel.jpg"
+import MotionPieceCard from "../../screens/motion/MotionPiece.astro"
+import { getMotionPieces } from "../../screens/motion/motion"
+import "../../screens/motion/motion.css"
+
+// The header loops the Fourth Canvas logo showreel, muted, in place of the
+// usual artwork; its poster shows until the video can play
+
+const pieces = await getMotionPieces()
+---
+
+<BaseLayout
+	title="Motion Archive - Aremu Oluwagbamila"
+	description="Logo animations, ads and event montages by Aremu Oluwagbamila (SMOG)"
+	ogImage="https://www.aremusmog.com/assets/image/og/og-archives-v1.jpg"
+	url="https://www.aremusmog.com/archives/motion"
+	keywords="Aremu, Aremu Oluwagbamila, Aremu Smog, Motion Design, Logo Animation, Motion Graphics"
+	author="Aremu Smog"
+>
+	<div class="layout">
+		<Header
+			image={showreelPoster}
+			imageFormats={["webp"]}
+			imageAlt="A showreel of logo animations made at Fourth Canvas in 2017"
+			video="/assets/video/motion/showreel.mp4"
+			title="Motion Archive"
+			titleHref="/archives"
+			sticky
+		>
+			<Fragment slot="subtitle">Logo animations, ads and event montages</Fragment>
+		</Header>
+
+		<main>
+			<article class="description">
+				<ul class="motion-grid">
+					{pieces.map((piece) => <MotionPieceCard piece={piece} />)}
+				</ul>
+			</article>
+		</main>
+	</div>
+	<PillNav />
+</BaseLayout>
