@@ -217,6 +217,7 @@ body {
 	background-color: #1a1a1a;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 	z-index: 10;
+	white-space: nowrap;
 }
 .pill-nav a {
 	display: flex;
@@ -354,13 +355,23 @@ body {
 		/* Leaves room for .app-version underneath at the end of the page */
 		bottom: 44px;
 	}
+	/* Every item shows its icon at full size, and only the current page
+	   shows its label beside it, so four items fit on a 320px screen. The
+	   other labels are hidden visually but stay as the links' names */
+	.pill-nav {
+		gap: 2px;
+		padding: 4px;
+	}
 	.pill-nav a {
+		gap: 0;
+		padding: 10px 14px;
+		font-size: 0;
+	}
+	.pill-nav a[aria-current="page"] {
 		gap: 6px;
-		padding: 7px 14px;
-		font-size: 15px;
+		font-size: 14px;
 	}
 	.pill-nav__icon {
-		width: 16px;
-		height: 16px;
+		display: block;
 	}
 }
