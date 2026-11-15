@@ -1,0 +1,86 @@
+---
+import { getImage, inferRemoteSize } from "astro:assets"
+import { formatDate, type Post } from "./writings"
+
+interface Props {
+	posts: Post[]
+}
+
+const { posts } = Astro.props
+
+// Every cover sits in the same 16:9 frame (160×90 on desktop), shown whole:
+// each one is scaled to fit inside it, keeping its own shape
+const FRAME = { width: 160, height: 90 }
+
+const covers = await Promise.all(
+	posts.map(async ({ cover }) => {
+		if (!cover) return null
+		const original = await inferRemoteSize(cover)
+		const scale = Math.min(FRAME.width / original.width, FRAME.height / original.height)
+		const width = Math.round(original.width * scale)
+		const height = Math.round(original.height * scale)
+		const image = await getImage({
+			src: cover,
+			width,
+			height,
+			densities: [1, 2],
+			format: "webp",
+			quality: 70,
+		})
+		return {
+			src: image.src,
+			srcset: image.srcSet.attribute,
+			width,
+			height,
+			// Covers that leave gaps get a blurred copy of themselves behind them
+			letterboxed: width < FRAME.width - 1 || height < FRAME.height - 1,
+		}
+	}),
+)
+---
+
+<ul class="post-list">
+	{
+		posts.map((post, index) => (
+			<li class="post">
+				{/* Decorative: the title link already names the post. Posts without a
+				    cover get an empty frame, so every title lines up */}
+				<span class="post__cover" aria-hidden="true">
+					{covers[index]?.letterboxed && (
+						<img
+							class="post__cover-fill"
+							src={covers[index].src}
+							alt=""
+							loading="lazy"
+							decoding="async"
+						/>
+					)}
+					{covers[index] && (
+						<img
+							class="post__cover-image"
+							src={covers[index].src}
+							srcset={covers[index].srcset}
+							alt=""
+							width={covers[index].width}
+							height={covers[index].height}
+							loading="lazy"
+							decoding="async"
+						/>
+					)}
+				</span>
+				<div class="post__body">
+					<p class="post__meta">
+						<time datetime={post.date.toISOString()}>{formatDate(post.date)}</time>
+						<span aria-hidden="true">·</span>
+						{post.readingTime} min read
+					</p>
+					<p class="post__title">
+						<a class="post__link" href={post.url} target="_blank" rel="noopener">
+							{post.title}
+						</a>
+					</p>
+				</div>
+			</li>
+		))
+	}
+</ul>

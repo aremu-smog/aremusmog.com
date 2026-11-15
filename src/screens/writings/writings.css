@@ -1,22 +1,75 @@
-.year[open] .post-list {
-	margin-bottom: 24px;
-}
 .post-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 .post {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	padding: 20px 0;
 	border-bottom: 0.5px solid #333;
+}
+.post__body {
+	flex: 1;
+	min-width: 0;
+}
+/* The frame is 16:9, the shape most covers have. Others are shown whole,
+   never cropped, over a blurred copy of themselves that fills the gaps */
+.post__cover {
+	position: relative;
+	flex-shrink: 0;
+	width: 160px;
+	height: 90px;
+	overflow: hidden;
+	border-radius: 8px;
+	background-color: #1a1a1a;
+}
+/* Skeleton: a shimmer runs in frames that have a cover until the image
+   paints over it. Frames without a cover stay plain */
+.post__cover:has(img)::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(100deg, transparent 20%, #262626 50%, transparent 80%) #1a1a1a;
+	background-size: 200% 100%;
+	animation: post-cover-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes post-cover-shimmer {
+	from {
+		background-position: 150% 0;
+	}
+	to {
+		background-position: -50% 0;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.post__cover:has(img)::before {
+		animation: none;
+	}
+}
+.post__cover img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+.post__cover-fill {
+	object-fit: cover;
+	/* Scaled up so the blur doesn't fade out at the edges */
+	transform: scale(1.3);
+	filter: blur(12px) brightness(0.7);
+}
+.post__cover-image {
+	object-fit: contain;
 }
 .post:last-child {
 	border-bottom: none;
 }
 .post__link {
-	display: block;
-	padding: 16px 0;
 	color: inherit;
 	text-decoration: none;
+	text-underline-offset: 3px;
 	cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
 }
 .post p {
@@ -34,13 +87,114 @@
 	font-weight: 400;
 	line-height: 1.4;
 }
-.post__link:hover .post__title {
+.post__link:hover {
 	text-decoration: underline;
-	text-underline-offset: 3px;
 }
-.post__excerpt {
-	margin-top: 6px;
-	font-size: 14px;
-	line-height: 1.5;
+
+.medium-link {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: #555;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
+}
+.medium-link:hover {
+	text-decoration-color: currentColor;
+}
+/* A large closing card: the dotted Medium mark, a Doto title and an arrow */
+.view-all {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-top: 24px;
+	padding: 28px 24px;
+	border: 1px solid #2a2a2a;
+	border-radius: 16px;
+	background-color: #151515;
+	color: var(--white-color);
+	text-decoration: none;
+	cursor: url("/assets/icons/cursor-pointer.svg") 10 2, pointer;
+	transition:
+		background-color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out;
+}
+.view-all:hover {
+	background-color: #1c1c1c;
+	border-color: #3a3a3a;
+}
+.view-all__icon {
+	flex-shrink: 0;
+	/* The icon's 14:11 grid */
+	width: 70px;
+	height: 55px;
+	background-color: currentColor;
+	-webkit-mask: url("/assets/icons/medium.svg") center / contain no-repeat;
+	mask: url("/assets/icons/medium.svg") center / contain no-repeat;
+}
+.view-all__title {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	font-family: var(--font-doto);
+	font-weight: 800;
+	text-transform: uppercase;
+}
+.view-all__kicker {
+	font-size: 16px;
+	line-height: 1;
 	color: #9a9a9a;
+}
+.view-all__name {
+	font-size: 48px;
+	line-height: 1;
+}
+.view-all__arrow {
+	flex-shrink: 0;
+	margin-left: auto;
+	width: 18px;
+	height: 12px;
+	background-color: currentColor;
+	opacity: 0.6;
+	-webkit-mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+	mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+	/* The chevron points down; turned to point right */
+	transform: rotate(-90deg);
+	transition:
+		transform 0.2s ease-in-out,
+		opacity 0.2s ease-in-out;
+}
+.view-all:hover .view-all__arrow {
+	opacity: 1;
+	transform: rotate(-90deg) translateY(4px);
+}
+
+@media screen and (max-width: 600px) {
+	.post {
+		gap: 14px;
+		padding: 16px 0;
+	}
+	.post__cover {
+		width: 120px;
+		height: 68px;
+		border-radius: 6px;
+	}
+	.post__title {
+		font-size: 16px;
+	}
+	.view-all {
+		gap: 14px;
+		padding: 20px 16px;
+		border-radius: 12px;
+	}
+	.view-all__icon {
+		width: 50px;
+		height: 39px;
+	}
+	.view-all__kicker {
+		font-size: 13px;
+	}
+	.view-all__name {
+		font-size: 34px;
+	}
 }
