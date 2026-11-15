@@ -34,6 +34,8 @@ const writings = defineCollection({
 		readingTime: z.number().int().positive(),
 		/** Plain text from the first paragraph, cut to about 160 characters */
 		excerpt: z.string(),
+		/** The post's first image on Medium's CDN, or null when it has none */
+		cover: z.url().nullable(),
 	}),
 })
 
