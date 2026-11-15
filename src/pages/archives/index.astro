@@ -2,13 +2,13 @@
 import BaseLayout from "../../layouts/BaseLayout.astro"
 import Header from "../../components/Header.astro"
 import PillNav from "../../components/PillNav.astro"
-import cabinet from "../../assets/images/archives-cabinet-dot.png"
+import artwork from "../../assets/images/archives-box-pointillism.png"
 import ArchiveRow from "../../screens/archives/ArchiveRow.astro"
 import { getArchiveCategories } from "../../screens/archives/archives"
 import "../../screens/archives/archives.css"
 
-// Like the bookshelf, the dotted cabinet is smaller as a palette PNG (4 KB)
-// than as avif or webp, so the header skips the modern formats for it
+// The dotted archive box is larger as webp than as the PNG fallback, so the
+// header only offers avif ahead of it
 
 const categories = await getArchiveCategories()
 ---
@@ -23,9 +23,9 @@ const categories = await getArchiveCategories()
 >
 	<div class="layout">
 		<Header
-			image={cabinet}
-			imageFormats={[]}
-			imageAlt="A filing cabinet with three drawers"
+			image={artwork}
+			imageFormats={["avif"]}
+			imageAlt="A dotted archive box, lid open, full of file folders"
 			title="Archives"
 			sticky
 		>
