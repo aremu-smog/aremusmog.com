@@ -246,8 +246,10 @@ body {
 .pill-nav a[aria-current="page"] .pill-nav__icon {
 	display: block;
 }
+/* Icons are served with a year-long immutable cache, so a redrawn icon gets
+   a new -vN filename rather than replacing the old file */
 .pill-nav__icon--home {
-	--icon: url("/assets/icons/home.svg");
+	--icon: url("/assets/icons/home-v2.svg");
 }
 .pill-nav__icon--books {
 	--icon: url("/assets/icons/books.svg");

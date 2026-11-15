@@ -16,6 +16,13 @@ interface Props {
 	title: string
 	/** Adds `header--sticky` (used on the books page) */
 	sticky?: boolean
+	/**
+	 * A looping, muted video shown in place of the image, which becomes its
+	 * poster (the first modern format, or the PNG when there is none)
+	 */
+	video?: string
+	/** Where the title links to */
+	titleHref?: string
 }
 
 const {
@@ -25,6 +32,8 @@ const {
 	imageQuality = 70,
 	title,
 	sticky = false,
+	video,
+	titleHref = "/",
 } = Astro.props
 
 // Only the full-size (2x) rendition is generated, and the browser scales it
@@ -38,25 +47,43 @@ const [fallback, ...sources] = await Promise.all(
 ---
 
 <header class:list={["header", { "header--sticky": sticky }]}>
-	<picture>
-		{
-			sources.map((source, index) => (
-				<source srcset={source.src} type={`image/${imageFormats[index]}`} />
-			))
-		}
-		{/* The header image is the LCP element, so it loads eagerly at high priority */}
-		<img
-			src={fallback.src}
-			alt={imageAlt}
-			width="160"
-			height="160"
-			loading="eager"
-			fetchpriority="high"
-			decoding="sync"
-			class="header__image"
-		/>
-	</picture>
-	<h1 class="header__title"><a href="/">{title}</a></h1>
+	{
+		video ? (
+			<video
+				src={video}
+				poster={(sources[0] ?? fallback).src}
+				aria-label={imageAlt}
+				width="160"
+				height="160"
+				autoplay
+				loop
+				muted
+				playsinline
+				preload="auto"
+				class="header__image"
+			/>
+		) : (
+			<picture>
+				{
+					sources.map((source, index) => (
+						<source srcset={source.src} type={`image/${imageFormats[index]}`} />
+					))
+				}
+				{/* The header image is the LCP element, so it loads eagerly at high priority */}
+				<img
+					src={fallback.src}
+					alt={imageAlt}
+					width="160"
+					height="160"
+					loading="eager"
+					fetchpriority="high"
+					decoding="sync"
+					class="header__image"
+				/>
+			</picture>
+		)
+	}
+	<h1 class="header__title"><a href={titleHref}>{title}</a></h1>
 	<p class="header__subtitle"><slot name="subtitle" /></p>
 	<slot />
 </header>
