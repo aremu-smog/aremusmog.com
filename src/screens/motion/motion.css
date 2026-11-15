@@ -29,12 +29,13 @@
 }
 
 .player:fullscreen {
-	display: grid;
-	place-items: center;
 	border-radius: 0;
 	background-color: #000;
 }
+/* Pinned to the screen and letterboxed, so square pieces aren't cropped */
 .player:fullscreen .player__video {
+	position: absolute;
+	inset: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
