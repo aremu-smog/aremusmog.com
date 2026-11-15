@@ -1,0 +1,33 @@
+---
+import { getImage } from "astro:assets"
+import type { MotionPiece } from "./motion"
+
+interface Props {
+	piece: MotionPiece
+}
+
+const { piece } = Astro.props
+const { title, kind, width, height, sound, video } = piece
+const poster = await getImage({ src: piece.poster, format: "webp", quality: 70 })
+// Wide pieces take the full row; square ones sit two to a row
+const wide = width > height
+---
+
+<li class:list={["motion-piece", { "motion-piece--wide": wide }]}>
+	{/* Nothing loads until play is pressed, so the page only fetches posters */}
+	<video
+		src={video}
+		poster={poster.src}
+		width={width}
+		height={height}
+		controls
+		preload="none"
+		playsinline
+		muted={!sound}
+		class="motion-piece__video"
+	/>
+	<p class="motion-piece__caption">
+		<span class="motion-piece__title">{title}</span>
+		<span class="motion-piece__kind">{kind}</span>
+	</p>
+</li>

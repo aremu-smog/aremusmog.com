@@ -1,0 +1,44 @@
+.motion-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 28px 16px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.motion-piece--wide {
+	grid-column: 1 / -1;
+}
+
+.motion-piece__video {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 14px;
+	background-color: #1a1a1a;
+}
+
+/* Title on the left, the kind of piece on the right */
+.motion-piece__caption {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 12px;
+	margin: 10px 0 0;
+	font-size: 15px;
+}
+
+.motion-piece__kind {
+	font-family: var(--font-doto);
+	font-size: 13px;
+	font-weight: 800;
+	color: #6a6a6a;
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+	.motion-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
