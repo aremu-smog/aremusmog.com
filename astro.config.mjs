@@ -6,6 +6,11 @@ export default defineConfig({
 	site: "https://www.aremusmog.com",
 	trailingSlash: "ignore",
 	integrations: [partytown()],
+	image: {
+		// Writings covers are downloaded from Medium at build time and served
+		// from /_astro/ like the local images
+		domains: ["cdn-images-1.medium.com"],
+	},
 	build: {
 		format: "directory",
 		// The global stylesheet is ~1.5 KB gzipped: inlining it into every page

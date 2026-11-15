@@ -226,7 +226,7 @@ body {
 	padding: 8px 18px;
 	border-radius: 999px;
 	font-family: var(--font-doto);
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 800;
 	color: #9a9a9a;
 	text-decoration: none;
@@ -236,8 +236,9 @@ body {
 }
 .pill-nav__icon {
 	display: none;
-	width: 20px;
-	height: 20px;
+	/* A little larger than the 15px label, so the dots stay crisp */
+	width: 18px;
+	height: 18px;
 	background-color: currentColor;
 	-webkit-mask: var(--icon) center / contain no-repeat;
 	mask: var(--icon) center / contain no-repeat;
@@ -250,6 +251,9 @@ body {
 }
 .pill-nav__icon--books {
 	--icon: url("/assets/icons/books.svg");
+}
+.pill-nav__icon--thoughts {
+	--icon: url("/assets/icons/thoughts.svg");
 }
 .pill-nav a:hover {
 	background-color: #262626;
@@ -355,32 +359,25 @@ body {
 		/* Leaves room for .app-version underneath at the end of the page */
 		bottom: 44px;
 	}
-	.pill-nav a {
-		gap: 6px;
-		padding: 7px 14px;
-		font-size: 15px;
-	}
-	.pill-nav__icon {
-		width: 16px;
-		height: 16px;
-	}
-}
-
-/* Four pills, with the active one showing its icon, are about 385px wide
-   at the mobile size: narrower phones get a tighter nav (about 295px) so
-   it keeps a gutter on each side */
-@media screen and (max-width: 440px) {
+	/* Every item shows its icon at full size, and only the current page
+	   shows its label beside it, so four items fit on a 320px screen. The
+	   other labels are hidden visually but stay as the links' names */
 	.pill-nav {
-		gap: 0;
+		gap: 2px;
 		padding: 4px;
 	}
 	.pill-nav a {
-		gap: 4px;
-		padding: 6px 9px;
-		font-size: 13px;
+		gap: 0;
+		padding: 10px 14px;
+		font-size: 0;
+	}
+	.pill-nav a[aria-current="page"] {
+		gap: 6px;
+		font-size: 14px;
 	}
 	.pill-nav__icon {
-		width: 14px;
-		height: 14px;
+		display: block;
+		width: 20px;
+		height: 20px;
 	}
 }
