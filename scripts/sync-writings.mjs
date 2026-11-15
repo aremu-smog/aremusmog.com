@@ -1,7 +1,9 @@
 // Pulls the Medium RSS feed and merges any new posts into
 // src/content/writings/posts.json. The feed only carries the latest 10
 // posts, so existing entries are never removed or rewritten: the file keeps
-// every post it has ever seen. Output is deterministic, so a run with no new
+// every post it has ever seen. The one exception is a field added after a
+// post was first saved (like `cover`), which is filled in while the post is
+// still in the feed. Output is deterministic, so a run with no new
 // posts leaves the file untouched.
 //
 // Usage: pnpm sync:writings
@@ -63,6 +65,12 @@ const readingTimeOf = (html) => {
 	return Math.max(1, Math.round(words / WORDS_PER_MINUTE))
 }
 
+/** The first image in the post, or null; Medium's tracking pixel doesn't count */
+const coverOf = (html) => {
+	const sources = [...html.matchAll(/<img\s[^>]*src="([^"]+)"/g)].map(([, src]) => decodeEntities(src))
+	return sources.find((src) => new URL(src).hostname === "cdn-images-1.medium.com") ?? null
+}
+
 /** Drops Medium's tracking query, e.g. ?source=rss-e17e222b85d4------2 */
 const cleanUrl = (link) => {
 	const url = new URL(link)
@@ -85,6 +93,7 @@ const parsePost = (item) => {
 		tags: elements(item, "category"),
 		readingTime: readingTimeOf(html),
 		excerpt: excerptOf(html),
+		cover: coverOf(html),
 	}
 }
 
@@ -97,9 +106,12 @@ const fetched = elements(feed, "item").map(parsePost)
 if (fetched.length === 0) throw new Error(`No posts found in ${FEED_URL}`)
 
 const existing = JSON.parse(await readFile(POSTS_FILE, "utf8").catch(() => "[]"))
+const latest = new Map(fetched.map((post) => [post.url, post]))
+// Saved posts keep their values; only fields they're missing are taken from the feed
+const merged = existing.map((post) => ({ ...latest.get(post.url), ...post }))
 const known = new Set(existing.map((post) => post.url))
 const added = fetched.filter((post) => !known.has(post.url))
-const posts = [...existing, ...added].sort(byNewest)
+const posts = [...merged, ...added].sort(byNewest)
 
 const output = `${JSON.stringify(posts, null, "\t")}\n`
 const current = await readFile(POSTS_FILE, "utf8").catch(() => "")

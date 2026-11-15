@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Header from "../../components/Header.astro"
+import PillNav from "../../components/PillNav.astro"
+import artwork from "../../assets/images/writings-thinker-pointillism.png"
+import PostList from "../../screens/writings/PostList.astro"
+import { getPosts } from "../../screens/writings/writings"
+import "../../screens/writings/writings.css"
+
+const MEDIUM_URL = "https://aremusmog.medium.com/"
+// The page shows the latest posts; the rest are a link away on Medium
+const LATEST_POSTS = 10
+
+const posts = (await getPosts()).slice(0, LATEST_POSTS)
+---
+
+<BaseLayout
+	title="Thoughts - Aremu Oluwagbamila"
+	description="Essays and notes on engineering, startups, faith, music and life, from my Medium."
+	ogImage="https://www.aremusmog.com/assets/image/og/og-home-v3.jpg"
+	url="https://www.aremusmog.com/thoughts"
+	keywords="Aremu, Aremu Oluwagbamila, Aremu Smog, Frontend Engineer, Software Engineer, Thoughts, Writings, Medium"
+	author="Aremu Smog"
+>
+	<div class="layout">
+		<Header
+			image={artwork}
+			imageAlt="A dotted bust of a bearded thinker, chin resting on his hand"
+			title="Thoughts"
+			sticky
+		>
+			<Fragment slot="subtitle">
+				My writings live on <a class="medium-link" href={MEDIUM_URL} target="_blank" rel="noopener">Medium</a>
+			</Fragment>
+		</Header>
+
+		<main>
+			<article class="description">
+				<section id="writings_list">
+					<PostList posts={posts} />
+					<a class="view-all" href={MEDIUM_URL} target="_blank" rel="noopener">
+						<span class="view-all__icon" aria-hidden="true"></span>
+						<span class="view-all__title">
+							<span class="view-all__kicker">View all on</span>{" "}
+							<span class="view-all__name">Medium</span>
+						</span>
+						<span class="view-all__arrow" aria-hidden="true"></span>
+					</a>
+				</section>
+			</article>
+		</main>
+	</div>
+	<PillNav />
+</BaseLayout>
