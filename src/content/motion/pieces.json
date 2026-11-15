@@ -1,0 +1,65 @@
+[
+	{
+		"id": "coworking-conference-2017",
+		"title": "Coworking Conference 2017",
+		"kind": "Event montage",
+		"order": 1,
+		"width": 1280,
+		"height": 720,
+		"sound": true
+	},
+	{
+		"id": "gemzone",
+		"title": "Gemzone",
+		"kind": "Ad",
+		"order": 2,
+		"width": 720,
+		"height": 720,
+		"sound": true
+	},
+	{
+		"id": "paivot",
+		"title": "Paivot",
+		"kind": "Logo animation",
+		"order": 3,
+		"width": 720,
+		"height": 720,
+		"sound": false
+	},
+	{
+		"id": "iya-eba",
+		"title": "Iya Eba",
+		"kind": "Award nomination",
+		"order": 4,
+		"width": 1280,
+		"height": 720,
+		"sound": true
+	},
+	{
+		"id": "the-boardroom",
+		"title": "The Boardroom",
+		"kind": "Logo animation",
+		"order": 5,
+		"width": 720,
+		"height": 720,
+		"sound": false
+	},
+	{
+		"id": "nike-adeyemi",
+		"title": "Nike Adeyemi Ministry",
+		"kind": "Logo animation",
+		"order": 6,
+		"width": 720,
+		"height": 720,
+		"sound": false
+	},
+	{
+		"id": "chicken-n-tinz",
+		"title": "Chicken 'n' Tinz",
+		"kind": "Logo animation",
+		"order": 7,
+		"width": 720,
+		"height": 720,
+		"sound": false
+	}
+]
