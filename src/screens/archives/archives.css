@@ -1,0 +1,74 @@
+.archive-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.archive-row {
+	border-bottom: 0.5px solid #333;
+}
+
+/* Title and status/arrow share the first line, the blurb sits underneath */
+.archive-row__inner {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	column-gap: 16px;
+	padding: 20px 0 22px;
+	color: inherit;
+	text-decoration: none;
+}
+
+.archive-row__title {
+	margin: 0;
+	font-family: var(--font-doto);
+	font-size: 40px;
+	font-weight: 800;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+.archive-row__blurb {
+	grid-column: 1 / -1;
+	margin: 6px 0 0;
+	font-size: 15px;
+	color: #9a9a9a;
+}
+
+.archive-row__status {
+	font-family: var(--font-doto);
+	font-size: 14px;
+	font-weight: 800;
+	color: #5a5a5a;
+	white-space: nowrap;
+}
+
+/* Rows without a subpage yet are muted */
+.archive-row__inner:not(.archive-row__inner--live) .archive-row__title {
+	color: #6a6a6a;
+}
+
+.archive-row__arrow {
+	width: 18px;
+	height: 12px;
+	background-color: currentColor;
+	opacity: 0.6;
+	/* The books chevron, turned to point right */
+	transform: rotate(-90deg);
+	-webkit-mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+	mask: url("/assets/icons/chevron.svg") center / contain no-repeat;
+	transition:
+		transform 0.2s ease-in-out,
+		opacity 0.2s ease-in-out;
+}
+.archive-row__inner--live:hover .archive-row__arrow,
+.archive-row__inner--live:focus-visible .archive-row__arrow {
+	opacity: 1;
+	transform: rotate(-90deg) translateY(4px);
+}
+
+@media screen and (max-width: 600px) {
+	.archive-row__title {
+		font-size: 32px;
+	}
+}
