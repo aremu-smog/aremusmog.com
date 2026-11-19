@@ -66,11 +66,14 @@ a {
 	text-decoration-color: var(--brand-color);
 }
 
+/* A dotted underline nods to Doto without swapping fonts, which would
+   change the link's width and reflow the line. Only the style changes, so
+   links that have no underline don't gain one. */
 a:hover {
 	color: var(--brand-color);
-	text-decoration: none;
-	font-family: var(--font-doto);
-	font-weight: 800;
+	text-decoration-style: dotted;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 4px;
 }
 
 .nav ul {
